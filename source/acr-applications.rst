@@ -156,18 +156,35 @@ The inbound and outbound conference bridge service.
 +----------------+-----------------------------------------------------------------------------------------+
 
 
-.. _pickup:
+echo
+----
 
-pickup
-------
-
-Permits proper answering of multiple simultaneous calls to the same pickup group.
+Simply returns all audio sent, including voice, DTMF, etc after the specified delay *milliseconds*.
 
 .. code-block:: json
 
     {
-        "pickup": "mygroup"
+        "echo": "0"
     }
+
+
+goto
+----
+
+Immediately goto an another extension (or route) and exit from current extension.
+
+.. code-block:: json
+
+
+    {
+        "goto": "my_extension"
+    },
+    {
+        "goto": "public:my_extension"
+    }
+
+Goto extension called my_extension in the **current**, **default** or **public** route.
+
 
 .. _hangup:
 
@@ -183,3 +200,18 @@ Hangs up a channel, with an optional cause code supplied.
     }
 
 The default code is **NORMAL_CLEARING**. You can specify any code from the :ref:`hangup-cause-code-table`.
+
+.. _pickup:
+
+pickup
+------
+
+Permits proper answering of multiple simultaneous calls to the same pickup group.
+
+.. code-block:: json
+
+    {
+        "pickup": "mygroup"
+    }
+
+
