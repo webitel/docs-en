@@ -13,12 +13,6 @@ Documentation contents
 
    acr-scheme
    acr-applications
+   hangup-cause-code-table
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
