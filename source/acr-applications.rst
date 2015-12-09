@@ -175,7 +175,6 @@ Immediately goto an another extension (or route) and exit from current extension
 
 .. code-block:: json
 
-
     {
         "goto": "my_extension"
     },
@@ -200,6 +199,78 @@ Hangs up a channel, with an optional cause code supplied.
     }
 
 The default code is **NORMAL_CLEARING**. You can specify any code from the :ref:`hangup-cause-code-table`.
+
+httpRequest
+-----------
+
+.. code-block:: json
+
+    {
+        "httpRequest": {
+                "url": "https://sales.bpmonline.com/0/ServiceModel/GetCallerOwnerService.svc/GetCallerOwner",
+                "method": "POST",
+                "headers": {
+                    "Content-Type":"application/json"
+                },
+                "data": {
+                    "callerIdNumber": "${caller_id_number}"
+                },
+                "exportVariables": {
+                    "effective_caller_id_name": "callerIdName",
+                    "owner_caller_id_number": "callerIdOwner"
+                }
+        }
+    }
+
+
+inBandDTMF
+---------
+
+You can use ``inBandDTMF`` to enable in-band DTMF detection (i.e. the detection of DTMF tones on a channel). You should do this when you want to be able to identify DTMF tones on a channel that doesn't otherwise support another signaling method (like RFC2833 or INFO).
+
+.. code-block:: json
+
+    {
+      "inBandDTMF": "start"
+    },
+    {
+      "inBandDTMF": "stop"
+    }
+
+
+log
+---
+
+Logs a string of text to the console.
+
+.. code-block:: json
+
+    {
+        "log": "my log message"
+    }
+
+park
+----
+
+Places a channel "on hold" in the switch, instead of in the phone.
+
+.. code-block:: json
+
+    {
+        "park": {
+            "name": "myPark",
+            "lot": "1000-2000",
+            "auto": "in"
+        }
+    }
+
++----------+------------------------------------------------------------------------+
+| ``name`` | Park lot name.                                                         |
++----------+------------------------------------------------------------------------+
+| ``lot``  | Park lot number.                                                       |
++----------+------------------------------------------------------------------------+
+| ``auto`` | Put caller to park (in) or retrieve (out) with "parking lot" numbers.  |
++----------+------------------------------------------------------------------------+
 
 .. _pickup:
 
