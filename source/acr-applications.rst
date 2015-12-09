@@ -175,12 +175,12 @@ Immediately goto an another extension (or route) and exit from current extension
 
 .. code-block:: json
 
-    {
+    [{
         "goto": "my_extension"
     },
     {
         "goto": "public:my_extension"
-    }
+    }]
 
 Goto extension called my_extension in the **current**, **default** or **public** route.
 
@@ -224,18 +224,18 @@ httpRequest
 
 
 inBandDTMF
----------
+----------
 
 You can use ``inBandDTMF`` to enable in-band DTMF detection (i.e. the detection of DTMF tones on a channel). You should do this when you want to be able to identify DTMF tones on a channel that doesn't otherwise support another signaling method (like RFC2833 or INFO).
 
 .. code-block:: json
 
-    {
+    [{
       "inBandDTMF": "start"
     },
     {
       "inBandDTMF": "stop"
-    }
+    }]
 
 
 log
