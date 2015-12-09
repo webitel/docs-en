@@ -6,12 +6,12 @@ ACR Scheme
 `ACR 
 <https://github.com/webitel/acr>`_ (Advanced Call Routing) JSON Scheme - routes call that match configured rules. ACR Schemes are separated in two different route for different kinds of calls:
 
-* **Default Route** handles calls originating from internal extensions 
+* **Default Route** handles calls originating from internal extensions.
 * **Public Route** handles calls originating from the public phone network (`PSTN
   <http://en.wikipedia.org/wiki/Public_switched_telephone_network>`_).
 
-Default Route Example
----------------------
+Default Route 
+-------------
 
 .. code-block:: json 
 
@@ -43,26 +43,54 @@ Default Route Example
       ]
     }
 
-Callflow Applications
-=====================
+Public Route 
+-------------
 
-answer
-------
+.. code-block:: json 
 
-Answers an incoming call or session.
+    {
+      "destination_number": [
+        "442228392",
+        "74997045627"
+      ],
+      "domain": "webitel.ua",
+      "callflow": [
+        {
+          "httpRequest": {
+            "url": "https://sales.it-sfera.com/0/ServiceModel/GetCallerOwnerService.svc/GetCallerOwner"
+          }
+        },
+        {
+          "if": {
+            "expression": "${owner_caller_id_number}",
+            "then": [
+              {
+                "answer": "183"
+              },
+              {
+                "recordSession": "start"
+              },
+              {
+                "bridge": {
+                  "endpoints": [
+                    {
+                      "name": "${owner_caller_id_number}",
+                      "type": "user",
+                      "parameters": [
+                        "leg_timeout=10"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "goto": "default:100"
+        }
+      ]
+    }
 
-.. code-block:: json
 
-   {
-       "answer": "200 OK"
-   }
-
-+------------+-------------------------------------------------------------------------------------+
-| 200 OK     |  Session Description Protocol (SDP) message that is sent by an answerer in response |
-|            |  to an offer that is received from an offerer.                                      |
-+------------+-------------------------------------------------------------------------------------+
-| 183 Session| Establishes media (SDP) but does not answer. Is equivalent to a SIP status code     |
-| Progress   | 183 with SDP.                                                                       |
-+------------+-------------------------------------------------------------------------------------+
-| 180 Ringing|  Is equivalent to a SIP status code 180 Ringing without SDP.                        |
-+------------+-------------------------------------------------------------------------------------+
+For more information go to the :ref:`acr-applications` page.

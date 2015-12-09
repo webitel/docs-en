@@ -1,13 +1,11 @@
 Webitel documentation
 ===================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
    acr-scheme
-   restapi
+   acr-applications
 
 
 Indices and tables
