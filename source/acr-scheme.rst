@@ -14,6 +14,7 @@ Default Route
 -------------
 
 .. code-block:: json 
+   :caption: Default route example JSON scheme
 
     {
       "destination_number": "^\\+?3?8?(044\\d{7})$",
@@ -47,6 +48,7 @@ Public Route
 -------------
 
 .. code-block:: json 
+   :caption: Public route example JSON scheme
 
     {
       "destination_number": [
