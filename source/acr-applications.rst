@@ -53,4 +53,4 @@ Hangs up a channel, with an optional cause code supplied.
         "hangup": ""
     }
 
-The default code is **NORMAL_CLEARING**. You can specify any code from the Hangup Cause Code Table.
+The default code is **NORMAL_CLEARING**. You can specify any code from the :ref:`hangup-cause-code-table`.

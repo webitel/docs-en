@@ -63,5 +63,4 @@
 605;;PICKED_OFF;;This cause means the call was picked up by intercepting it from another extension.
 606;;USER_NOT_REGISTERED;;This means you tried to originate a call to a SIP user who forgot to register.
 607;;PROGRESS_TIMEOUT;;
-609;;GATEWAY_DOWN;;Gateway is down (not answering on OPTIONS or SUBSCRIBE)
-
+609;;GATEWAY_DOWN;;Gateway is down (not answering on OPTIONS or SUBSCRIBE).
