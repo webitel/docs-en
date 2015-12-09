@@ -14,6 +14,15 @@ Advanced Call Routing
    acr-scheme
    acr-applications
 
+HTTP API v2
+===========
+
+.. toctree::
+   :maxdepth: 2
+
+   auth-token
+   restful-http-api
+
 Miscellaneous
 =============
 

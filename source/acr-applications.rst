@@ -27,7 +27,7 @@ Answers an incoming call or session.
 blackList
 ----------
 
-The blackList application executes actions for the blacklisted numbers.
+The blackList application executes various actions for the blacklisted numbers.
 
 .. code-block:: json
 
@@ -77,19 +77,19 @@ Endpoints types:
 - **user**
 - **device**
 
-``strategy``
-++++++++++++
+strategy
+++++++++
 
 - **multiple** - no limit to concurrency, first one to answer wins.
 - **failover** -  no limit to failover number.
 
-``pickup``
-++++++++++
+pickup
+++++++
 
 :ref:`pickup` group name. The pickup endpoint is a dummy channel that never answers to which you can originate from anywhere you can place calls.
 
-``parameters``
-++++++++++++++
+parameters
+++++++++++
 
 Set variables to all endpoints. Some useful variables:
 
