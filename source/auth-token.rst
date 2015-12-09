@@ -35,6 +35,12 @@ Auth Token
       }
 
    :reqheader Content-Type: `application/json`
+   :<json string username: User name with domain
+   :<json string password: User password
+   :>json string key: Token key
+   :>json string token: Token secret
+   :>json int expires: Token time to live
+   :>json int role: 0 = root; 1 = admin; 2 = user;
    :statuscode 200: No error
    :statuscode 400: User name is required
    :statuscode 401: Invalid credentials
