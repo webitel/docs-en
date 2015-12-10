@@ -138,11 +138,11 @@ Create a new domain
 
       HTTP/1.1 200 OK
 
-    {
-        "status":"OK",
-        "info":"+OK [mydomain.com] created !\n",
-        "more info":""
-    }
+      {
+         "status":"OK",
+         "info":"+OK [mydomain.com] created !\n",
+         "more info":""
+      }
 
    :<json string domain_name: The domain name
    :<json string customer_id: The customer license ID
@@ -177,10 +177,10 @@ Delete the domain
       HTTP/1.1 200 OK
 
       {
-        "status":"OK",
-        "info":"+OK [mydomain.com] destroy !\n",
-        "more info":""
-     }
+         "status":"OK",
+         "info":"+OK [mydomain.com] destroy !\n",
+         "more info":""
+      }
 
    :param string domain_name: The domain name
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`

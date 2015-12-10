@@ -71,7 +71,8 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
         }
     }
 
-Endpoints types:
+endpoints types
++++++++++++++++
 
 - **sipGateway** 
 - **user**
