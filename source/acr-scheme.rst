@@ -177,7 +177,7 @@ By default, time-based routing uses the UTC timezone. *See:* :ref:`tz-table`.
 Conditional Statements
 ----------------------
 
-In ACR Scheme we have the following conditional statements:
+In the ACR Scheme we have the following conditional statements:
 
 - Use **if ... then** to specify a block of code to be executed, if a specified condition is true
 - Use **else** to specify a block of code to be executed, if the same condition is false

@@ -5,14 +5,16 @@ Webitel API Documentation
 
 Webitel is designed to handle anything from small offices to big contact centers with CRM integration. Webitel is based on the best open source applications including Docker, FreeSWITCH, Node.js, MongoDB, Elasticsearch and Kibana.
 
-HTTP API v2
-===========
+RESTful HTTP API v2
+===================
 
 .. toctree::
    :maxdepth: 2
 
    auth-token
-   restful-http-api
+   restful-http-api-domains
+   restful-http-api-accounts
+   restful-http-api-misc
 
 Advanced Call Routing
 =====================
