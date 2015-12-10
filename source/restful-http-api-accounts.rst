@@ -3,8 +3,8 @@
 Accounts
 ========
 
-Get accounts list
-+++++++++++++++++
+Getting accounts list
++++++++++++++++++++++
 
 .. http:get:: /api/v2/accounts 
 
@@ -51,8 +51,8 @@ Get accounts list
 
     curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1'  "https://api.webitel.com:10022/api/v2/accounts"
 
-Get account info
-++++++++++++++++
+Get an account info
++++++++++++++++++++
 
 .. http:get:: /api/v2/accounts/(account_id) 
 
@@ -108,8 +108,8 @@ Get account info
 
     curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' "https://api.webitel.com:10022/api/v2/accounts/100"
 
-Create a new account
-++++++++++++++++++++
+Creat an account
+++++++++++++++++
 
 .. http:post:: /api/v2/accounts 
 
@@ -135,12 +135,12 @@ Create a new account
    **Example response**:
 
    .. sourcecode:: http
-
+      
       HTTP/1.1 200 OK
       
       {
-        "status":"OK",
-        "data":{
+        "status": "OK",
+        "data": {
             "a1-hash":"5a3b8a1408181a5a9613b639cf2f65f6",
             "dial-string":"{webitel_call_uuid=${create_uuid()},sip_invite_domain=10.10.10.144}${sofia_contact(\*/109@10.10.10.144)},${verto_contact(109@10.10.10.144)}",
             "webitel-admin":"true",
@@ -157,9 +157,9 @@ Create a new account
             "variable_outbound_caller_id_name":"109",
             "variable_account_role":"admin",
             "variable_default_language":"ru"
-         }
+         }
       }
-
+      
 
    :<json string login: Webitel User ID
    :<json string password: User password
@@ -176,7 +176,7 @@ Create a new account
 
     curl -XPOST -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1'  -H 'Content-Type: application/json' -d '{"login": "109","password": "109","role": "user","domain": "10.10.10.144", "parameters": ["vm-enabled=true", "webitel-extensions=109"], "variables": ["default_language=ru"]}' "https://api.webitel.com:10022/api/v2/accounts"
 
-Update an account
+Updating accounts
 +++++++++++++++++
 
 .. http:put:: /api/v2/accounts/(account_id) 
@@ -235,8 +235,8 @@ Update an account
 
     curl -XPUT -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' -H 'Content-Type: application/json' -d '{"password": "103","variables": ["default_language=ru"]}' "https://api.webitel.com:10022/api/v2/accounts/103"
 
-Delete the account
-++++++++++++++++++
+Deleting accounts
++++++++++++++++++
 
 .. http:delete:: /api/v2/accounts/(account_id) 
 
