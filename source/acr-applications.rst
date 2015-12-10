@@ -286,12 +286,105 @@ Permits proper answering of multiple simultaneous calls to the same pickup group
         "pickup": "mygroup"
     }
 
+
+receiveFax
+----------
+
+Receive a FAX as a PDF file.
+
+.. code-block:: json
+
+    {
+        "receiveFax": {
+            "enable_t38": "false",
+            "email": ["office@webitel.com", "admin@webitel.com"]
+        }
+    }
+
++----------------+-----------------------------------------------------------------------------------------+
+| ``enable_t38`` | If you want Webitel to send the re-INVITE for T.38 (per the standard) set to **false**. |
++----------------+-----------------------------------------------------------------------------------------+
+| ``email``      | Send PDF file to Email *(optional)*.                                                    |
++----------------+-----------------------------------------------------------------------------------------+
+
+recordFile
+----------
+
+Record to a file from the channel's input media stream. 
+
+.. code-block:: json
+
+
+    {
+        "recordFile": {
+            "name": "MySuperFile",
+            "terminators": "#",
+            "type": "mp3",
+            "maxSec": "60",
+            "silenceHits": "5",
+            "email": ["office@webitel.com", "admin@webitel.com"]
+        }
+    }
+
++--------------------+------------------------------------------------------------------------------------------+
+| ``name``           | Recorded file name.                                                                      |
++--------------------+------------------------------------------------------------------------------------------+
+| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                                 |
++--------------------+------------------------------------------------------------------------------------------+
+| ``terminators``    | Will set # as recording session terminator.                                              |
++--------------------+------------------------------------------------------------------------------------------+
+| ``maxSec``         | The maximum duration of the recording in seconds.                                        |
++--------------------+------------------------------------------------------------------------------------------+
+| ``silenceHits``    | Is how many seconds of silence will be tolerated before the recording stops.             |
++--------------------+------------------------------------------------------------------------------------------+
+| ``email``          | Send recorded file to the Email *(optional)*.                                            |
++--------------------+------------------------------------------------------------------------------------------+
+
+
+recordSession
+-------------
+
+Records an entire phone call or session. 
+
+.. code-block:: json
+
+    {
+        "recordSession": {
+            "action": "start",
+            "type": "mp3",
+            "stereo": "true",
+            "bridged": "true",
+            "minSec": "2",
+            "followTransfer": "true",
+            "email": ["office@webitel.com", "admin@webitel.com"]
+        }
+    }
+
++--------------------+------------------------------------------------------------------------------------------+
+| ``action``         | start or stop record session.                                                            |
++--------------------+------------------------------------------------------------------------------------------+
+| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                                 |
++--------------------+------------------------------------------------------------------------------------------+
+| ``stereo``         | Record leg A and leg B streams (i.e. the caller is recorded to the left channel and the  |
+|                    | reciever is recorded on right channel) into different channel in a stereo file.          |
++--------------------+------------------------------------------------------------------------------------------+
+| ``bridged``        | Record session only when the channel is bridged.                                         |
++--------------------+------------------------------------------------------------------------------------------+
+| ``minSec``         | Sets the minimum recording length. Normally a recording must be at least 3 seconds long. | 
+|                    | If a recording does not meet the minimum length, it is deleted after being recorded.     |
++--------------------+------------------------------------------------------------------------------------------+
+| ``followTransfer`` | If you want the call recording to continue after transferring, set variable to **true**. |
++--------------------+------------------------------------------------------------------------------------------+
+| ``email``          | Send recorded file to the Email *(optional)*.                                            |
++--------------------+------------------------------------------------------------------------------------------+
+
+
 voicemail
 ---------
 
 Voicemail application lets you send calls to voicemail, which allows callers to leave messages for users and allows users to retrieve and manage any messages left by callers.
 
-Leave Voicemail
+leave voicemail
 +++++++++++++++
 
 .. code-block:: json
@@ -318,7 +411,7 @@ Leave Voicemail
 | ``cc``                | Inject the message into the specified voicemail mailbox.               |
 +-----------------------+------------------------------------------------------------------------+
 
-Check Voicemail
+check voicemail
 +++++++++++++++
 
 .. code-block:: json
