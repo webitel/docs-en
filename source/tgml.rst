@@ -32,7 +32,7 @@ Standard tones can have custom duration per use with the () modifier 7(1000, 500
 Examples
 ++++++++
 
-ITU-T Recommendation Q.35 "Technical Characteristics of Tones for Telephone Service" defines many of these tones. They are provided here for your convenience, and because they make great examples. Additionally, RFC 2833 references ITU-T E.182 "Application of tones and recorded announcements in telephone services" for when to use certain tones in RTP. You may want to look at ITU-T Recommendation E.180 for different countries, what tones are used, etc.
+ITU-T Recommendation Q.35 "Technical Characteristics of Tones for Telephone Service" defines many of these tones. They are provided here for your convenience, and because they make great examples. Additionally, RFC 2833 references ITU-T E.182 "`Application of tones and recorded announcements in telephone services <http://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.180-2010-PDF-E.pdf>`_" for when to use certain tones in RTP. You may want to look at ITU-T Recommendation E.180 for different countries, what tones are used, etc.
 
 UK Ring Tone [400+450 Hz on for 400ms off for 200ms then 400+450 Hz on for 400ms off for 2000ms]
 
@@ -69,3 +69,4 @@ Australian ringback tone
 ::
 
     %(400,200,400,425);%(400,2000,400,425)
+
