@@ -286,4 +286,55 @@ Permits proper answering of multiple simultaneous calls to the same pickup group
         "pickup": "mygroup"
     }
 
+voicemail
+---------
 
+Voicemail application lets you send calls to voicemail, which allows callers to leave messages for users and allows users to retrieve and manage any messages left by callers.
+
+Leave Voicemail
++++++++++++++++
+
+.. code-block:: json
+
+   {
+      "voicemail": {
+          "user": "100",
+          "skip_greeting": true,
+          "skip_instructions": true,
+          "cc": [
+            "1001",
+            "1002"
+          ]
+      }
+    }
+
++-----------------------+------------------------------------------------------------------------+
+| ``user``              | Webitel User ID.                                                       |
++-----------------------+------------------------------------------------------------------------+
+| ``skip_greeting``     | Skips playback of greeting message when leaving messages.              |
++-----------------------+------------------------------------------------------------------------+
+| ``skip_instructions`` | Skips playback of instructions when leaving messages.                  |
++-----------------------+------------------------------------------------------------------------+
+| ``cc``                | Inject the message into the specified voicemail mailbox.               |
++-----------------------+------------------------------------------------------------------------+
+
+Check Voicemail
++++++++++++++++
+
+.. code-block:: json
+
+   {
+      "voicemail": {
+          "user": "1000",
+          "check": true,
+          "auth": true
+      }
+   }
+
++-----------------------+------------------------------------------------------------------------+
+| ``user``              | Webitel User ID.                                                       |
++-----------------------+------------------------------------------------------------------------+
+| ``check``             | Will allow the user to check voicemail if is set to the **true**.      |
++-----------------------+------------------------------------------------------------------------+
+| ``auth``              | Will prompt for PIN if is set to the **true**.                         |
++-----------------------+------------------------------------------------------------------------+
