@@ -11,6 +11,7 @@ RESTful HTTP API v2
 .. toctree::
    :maxdepth: 2
 
+   restful-http-api
    auth-token
    restful-http-api-domains
    restful-http-api-accounts

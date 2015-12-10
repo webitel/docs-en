@@ -131,13 +131,12 @@ Creat an account
         "variables": ["default_language=ru"]
       }
 
-
    **Example response**:
 
    .. sourcecode:: http
-      
+
       HTTP/1.1 200 OK
-      
+
       {
         "status": "OK",
         "data": {
@@ -159,7 +158,7 @@ Creat an account
             "variable_default_language":"ru"
          }
       }
-      
+
 
    :<json string login: Webitel User ID
    :<json string password: User password
