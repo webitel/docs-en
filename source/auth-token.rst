@@ -3,8 +3,8 @@
 Auth Token
 **********
 
-Create a new token
-++++++++++++++++++
+Create an auth token
+++++++++++++++++++++
 
 .. http:post:: /login
 
@@ -51,8 +51,8 @@ Create a new token
 
     curl -X POST -H 'Content-Type: application/json' -d '{"username":"100@mydomain.com","password":"secret"}' "https://api.webitel.com:10022/login"
 
-Delete the token
-++++++++++++++++
+Delete an auth token
+++++++++++++++++++++
 
 .. http:post:: /logout
 
