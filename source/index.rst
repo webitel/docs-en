@@ -30,6 +30,7 @@ Miscellaneous
    :maxdepth: 1
 
    hangup-cause-code-table
+   tz-table
    tgml
 
 Links

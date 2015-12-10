@@ -18,9 +18,10 @@ Default Route
 
     {
       "destination_number": "^\\+?3?8?(044\\d{7})$",
+      "order": 1,
       "name": "Kyiv",
       "domain": "webitel.ua",
-      "order": 1,
+      "fs_timezone" : "Europe/Kiev",
       "callflow": [
         {
           "setVar": [
@@ -56,6 +57,7 @@ Public Route
         "74997045627"
       ],
       "domain": "webitel.ua",
+      "fs_timezone" : "Europe/Kiev",
       "callflow": [
         {
           "httpRequest": {
@@ -100,7 +102,65 @@ Time of Day Routing
 
 Time of day routing allows calls to be executed different applications based upon the time of day, day of week. You can use it in the different :ref:`Conditional Statements`.
 
-By default, time-based routing uses the UTC timezone.
+By default, time-based routing uses the UTC timezone. *See:* :ref:`tz-table`.
+
+
+.. js:function:: &minute_of_day(minutes)
+    
+    :param string minutes: Minute of the day, (1-1440) (midnight = 1, 1am = 60, noon = 720, etc.). 
+    :returns: true, false.
+
+.. js:function:: &time_of_day(08:00-17:00)
+    
+    :param string time: Time range formatted: hh:mm[:ss]-hh:mm[:ss] (seconds optional).
+    :returns: true, false.
+
+.. js:function:: &minute(minutes)
+    
+    :param string minutes: Minute (of the hour), 0-59.
+    :returns: true, false.
+
+.. js:function:: &hour(houres)
+    
+    :param string houres: Hour, 0-23.
+    :returns: true, false.
+
+.. js:function:: &wday(wdays)
+    
+    :param string wdays: Day of week, 1-7 (Sun = 1, Mon = 2, etc.) or “sun”, “mon”, “tue”, etc.
+    :returns: true, false.
+
+.. js:function:: &mweek(mweeks)
+    
+    :param string mweeks: Week of month, 1-6.
+    :returns: true, false.
+
+.. js:function:: &week(weeks)
+    
+    :param string weeks: Week of year, 1-53.
+    :returns: true, false.
+
+.. js:function:: &mday(mdays)
+    
+    :param string mdays: Day of month, 1-31.
+    :returns: true, false.
+
+.. js:function:: &mon(m)
+    
+    :param string m: Month, 1-12 (Jan = 1, etc.).
+    :returns: true, false.
+
+.. js:function:: &yday(d)
+    
+    :param string d: Day of year, 1-366.
+    :returns: true, false.
+
+.. js:function:: &year(y)
+    
+    :param string y: Calendar year, 0-9999.
+    :returns: true, false.
+
+**Example code:**
 
 .. code-block:: json 
 
@@ -111,29 +171,6 @@ By default, time-based routing uses the UTC timezone.
     }
   }
 
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&minute_of_day()`` | Minute of the day, (1-1440) (midnight = 1, 1am = 60, noon = 720, etc.).                |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&time_of_day()``   | Time range formatted: hh:mm[:ss]-hh:mm[:ss] (seconds optional) Example: "08:00-17:00". |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&minute()``        | Minute (of the hour), 0-59.                                                            |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&hour()``          | Hour, 0-23.                                                                            |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&wday()``          | Day of week, 1-7 (Sun = 1, Mon = 2, etc.) or "sun", "mon", "tue", etc.                 |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&mweek()``         | Week of month, 1-6.                                                                    |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&week()``          | Week of year, 1-53.                                                                    |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&mday()``          | Day of month, 1-31.                                                                    |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&mon()``           | Month, 1-12 (Jan = 1, etc.).                                                           |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&yday()``          | Day of year, 1-366.                                                                    |
-+----------------------+----------------------------------------------------------------------------------------+
-| ``&year()``          | Calendar year, 0-9999.                                                                 |
-+----------------------+----------------------------------------------------------------------------------------+
 
 .. _Conditional Statements:
 
@@ -148,6 +185,8 @@ In ACR Scheme we have the following conditional statements:
 
 if
 ++
+
+.. py:module:: if
 
 .. code-block:: json 
 
@@ -166,6 +205,8 @@ if
 
 switch
 ++++++
+
+.. py:module:: switch
 
 .. code-block:: json 
 

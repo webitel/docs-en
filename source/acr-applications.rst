@@ -6,6 +6,8 @@ Callflow Applications
 answer
 ------
 
+.. py:module:: answer
+
 Answers an incoming call or session.
 
 .. code-block:: json
@@ -27,6 +29,9 @@ Answers an incoming call or session.
 blackList
 ----------
 
+.. py:module:: blackList
+
+
 The blackList application executes various actions for the blacklisted numbers.
 
 .. code-block:: json
@@ -38,10 +43,12 @@ The blackList application executes various actions for the blacklisted numbers.
         }
     }
 
-Default action is :ref:`hangup` with **INCOMING_CALL_BARRED** code (See: :ref:`hangup-cause-code-table`).
+Default action is :py:mod:`hangup` with **INCOMING_CALL_BARRED** code (See: :ref:`hangup-cause-code-table`).
 
 bridge
 ------
+
+.. py:module:: bridge
 
 Bridge a new channel to the existing one.Generally used to route an incoming call to one or more endpoints. Multiple endpoints can be dialed simultaneously or sequentially.
 
@@ -87,12 +94,10 @@ strategy
 pickup
 ++++++
 
-:ref:`pickup` group name. The pickup endpoint is a dummy channel that never answers to which you can originate from anywhere you can place calls.
+:py:mod:`pickup` group name. The pickup endpoint is a dummy channel that never answers to which you can originate from anywhere you can place calls.
 
 parameters
 ++++++++++
-
-Set variables to all endpoints. Some useful variables:
 
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``instant_ringback=true``                  | Ringback will not wait for indication before sending ringback tone to calling party.|
@@ -119,6 +124,8 @@ Set variables to all endpoints. Some useful variables:
 
 conference
 ----------
+
+.. py:module:: conference
 
 The inbound and outbound conference bridge service.
 
@@ -160,6 +167,8 @@ The inbound and outbound conference bridge service.
 echo
 ----
 
+.. py:module:: echo
+
 Simply returns all audio sent, including voice, DTMF, etc after the specified delay *milliseconds*.
 
 .. code-block:: json
@@ -172,24 +181,26 @@ Simply returns all audio sent, including voice, DTMF, etc after the specified de
 goto
 ----
 
+.. py:module:: goto
+
 Immediately goto an another extension (or route) and exit from current extension.
 
 .. code-block:: json
 
     [{
-        "goto": "my_extension"
+        "goto": "default:my_extension"
     },
     {
         "goto": "public:my_extension"
     }]
 
-Goto extension called my_extension in the **current**, **default** or **public** route.
+Goto extension called my_extension in the **default** or **public** route.
 
-
-.. _hangup:
 
 hangup
 ------
+
+.. py:module:: hangup
 
 Hangs up a channel, with an optional cause code supplied.
 
@@ -203,6 +214,8 @@ The default code is **NORMAL_CLEARING**. You can specify any code from the :ref:
 
 httpRequest
 -----------
+
+.. py:module:: httpRequest
 
 .. code-block:: json
 
@@ -227,6 +240,8 @@ httpRequest
 inBandDTMF
 ----------
 
+.. py:module:: inBandDTMF
+
 You can use ``inBandDTMF`` to enable in-band DTMF detection (i.e. the detection of DTMF tones on a channel). You should do this when you want to be able to identify DTMF tones on a channel that doesn't otherwise support another signaling method (like RFC2833 or INFO).
 
 .. code-block:: json
@@ -242,6 +257,8 @@ You can use ``inBandDTMF`` to enable in-band DTMF detection (i.e. the detection 
 log
 ---
 
+.. py:module:: log
+
 Logs a string of text to the console.
 
 .. code-block:: json
@@ -252,6 +269,8 @@ Logs a string of text to the console.
 
 park
 ----
+
+.. py:module:: park
 
 Places a channel "on hold" in the switch, instead of in the phone.
 
@@ -273,10 +292,11 @@ Places a channel "on hold" in the switch, instead of in the phone.
 | ``auto`` | Put caller to park (in) or retrieve (out) with "parking lot" numbers.  |
 +----------+------------------------------------------------------------------------+
 
-.. _pickup:
 
 pickup
 ------
+
+.. py:module:: pickup
 
 Permits proper answering of multiple simultaneous calls to the same pickup group.
 
@@ -289,6 +309,8 @@ Permits proper answering of multiple simultaneous calls to the same pickup group
 
 receiveFax
 ----------
+
+.. py:module:: receiveFax
 
 Receive a FAX as a PDF file.
 
@@ -310,6 +332,8 @@ Receive a FAX as a PDF file.
 recordFile
 ----------
 
+.. py:module:: recordFile
+
 Record to a file from the channel's input media stream. 
 
 .. code-block:: json
@@ -326,23 +350,25 @@ Record to a file from the channel's input media stream.
         }
     }
 
-+--------------------+------------------------------------------------------------------------------------------+
-| ``name``           | Recorded file name.                                                                      |
-+--------------------+------------------------------------------------------------------------------------------+
-| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                                 |
-+--------------------+------------------------------------------------------------------------------------------+
-| ``terminators``    | Will set # as recording session terminator.                                              |
-+--------------------+------------------------------------------------------------------------------------------+
-| ``maxSec``         | The maximum duration of the recording in seconds.                                        |
-+--------------------+------------------------------------------------------------------------------------------+
-| ``silenceHits``    | Is how many seconds of silence will be tolerated before the recording stops.             |
-+--------------------+------------------------------------------------------------------------------------------+
-| ``email``          | Send recorded file to the Email *(optional)*.                                            |
-+--------------------+------------------------------------------------------------------------------------------+
++--------------------+---------------------------------------------------------------------------------------+
+| ``name``           | Recorded file name.                                                                   |
++--------------------+---------------------------------------------------------------------------------------+
+| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                              |
++--------------------+---------------------------------------------------------------------------------------+
+| ``terminators``    | Will set # as recording session terminator.                                           |
++--------------------+---------------------------------------------------------------------------------------+
+| ``maxSec``         | The maximum duration of the recording in seconds.                                     |
++--------------------+---------------------------------------------------------------------------------------+
+| ``silenceHits``    | How many seconds of silence will be tolerated before the recording stops.             |
++--------------------+---------------------------------------------------------------------------------------+
+| ``email``          | Send recorded file to the Email *(optional)*.                                         |
++--------------------+---------------------------------------------------------------------------------------+
 
 
 recordSession
 -------------
+
+.. py:module:: recordSession
 
 Records an entire phone call or session. 
 
@@ -381,6 +407,8 @@ Records an entire phone call or session.
 
 voicemail
 ---------
+
+.. py:module:: voicemail
 
 Voicemail application lets you send calls to voicemail, which allows callers to leave messages for users and allows users to retrieve and manage any messages left by callers.
 
@@ -431,3 +459,4 @@ check voicemail
 +-----------------------+------------------------------------------------------------------------+
 | ``auth``              | Will prompt for PIN if is set to the **true**.                         |
 +-----------------------+------------------------------------------------------------------------+
+
