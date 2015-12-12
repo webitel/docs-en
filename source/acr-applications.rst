@@ -177,6 +177,53 @@ Simply returns all audio sent, including voice, DTMF, etc after the specified de
         "echo": "0"
     }
 
+Email
+-----
+
+sendEmail
++++++++++
+
+.. py:module:: sendEmail
+
+Sending an Email.
+
+.. code-block:: json
+
+    {
+        "sendEmail": {
+            "to": [
+              "office@gmail.com",
+              "support@webitel.ua"
+            ],
+            "subject": "[webitel](${Caller-Caller-ID-Number}) SMS notification",
+            "message": "<H3>Turn on SMS</h3>\n<b>Creditcard</b>: ${Creditcard[0]} <i>***</i> ${Creditcard[1]}"
+        }
+    }
+
+FAX
+---
+
+receiveFax
+++++++++++
+
+.. py:module:: receiveFax
+
+Receive a FAX as a PDF file.
+
+.. code-block:: json
+
+    {
+        "receiveFax": {
+            "enable_t38": "false",
+            "email": ["office@webitel.com", "admin@webitel.com"]
+        }
+    }
+
++----------------+-----------------------------------------------------------------------------------------+
+| ``enable_t38`` | If you want Webitel to send the re-INVITE for T.38 (per the standard) set to **false**. |
++----------------+-----------------------------------------------------------------------------------------+
+| ``email``      | Send PDF file to Email *(optional)*.                                                    |
++----------------+-----------------------------------------------------------------------------------------+
 
 goto
 ----
@@ -306,31 +353,11 @@ Permits proper answering of multiple simultaneous calls to the same pickup group
         "pickup": "mygroup"
     }
 
-
-receiveFax
-----------
-
-.. py:module:: receiveFax
-
-Receive a FAX as a PDF file.
-
-.. code-block:: json
-
-    {
-        "receiveFax": {
-            "enable_t38": "false",
-            "email": ["office@webitel.com", "admin@webitel.com"]
-        }
-    }
-
-+----------------+-----------------------------------------------------------------------------------------+
-| ``enable_t38`` | If you want Webitel to send the re-INVITE for T.38 (per the standard) set to **false**. |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``email``      | Send PDF file to Email *(optional)*.                                                    |
-+----------------+-----------------------------------------------------------------------------------------+
+Recording
+---------
 
 recordFile
-----------
+++++++++++
 
 .. py:module:: recordFile
 
@@ -364,9 +391,8 @@ Record to a file from the channel's input media stream.
 | ``email``          | Send recorded file to the Email *(optional)*.                                         |
 +--------------------+---------------------------------------------------------------------------------------+
 
-
 recordSession
--------------
++++++++++++++
 
 .. py:module:: recordSession
 
@@ -404,6 +430,109 @@ Records an entire phone call or session.
 | ``email``          | Send recorded file to the Email *(optional)*.                                            |
 +--------------------+------------------------------------------------------------------------------------------+
 
+ringback
+--------
+
+.. py:module:: ringback
+
+- **ringback call** lets you set artificial ringback on a channel that is waiting for an originated call to be answered.
+- **ringback transfer** - set the sound that will play if a call has already been answered, and it is then transferred to another endpoint.
+- **hold** - set music or tone on hold.
+
+.. code-block:: json
+
+    [{
+      "ringback": {
+        "call": {
+            "name": "my.mp3",
+            "type": "mp3"
+        },
+        "hold": {
+            "type": "silence"
+        },
+        "transfer": {
+            "name": "$${us-ring}",
+            "type": "tone"
+        }}
+    }]
+
+mp3 and wav
++++++++++++
+
+An any mp3 or wav file uploaded as a **media**.
+
+silence
++++++++
+
+Disable music on hold.
+
+shout
++++++
+Can play remote stream. You can set internet radio as Your ringback tone, just set in the name: http://online-radioroks.tavrmedia.ua/RadioROKS_32
+
+tone
+++++
+Generate tone.
+
+You may set **$${ru-ring}** globale variables in the name for a russian ringback tone. See :ref:`TGML` complete listing of capabilities and syntax.
+
+sleep
+-----
+
+.. py:module:: sleep
+
+Pause the channel for a given number of milliseconds, consuming the audio for that period of time. Calling sleep also will consume any outstanding RTP on the operating system's input queue, which can be very useful in situations where audio becomes backlogged.
+
+.. code-block:: json
+
+    {
+        "sleep": "1000"
+    }
+
+Variables
+---------
+
+Additionally to the build-in :ref:`channel-variables`, You may set any number of unique channel variables for your own purposes and even elect to log them to the CDR.
+
+setVar
+++++++
+
+.. py:module:: setVar
+
+Set a channel variable.
+
+.. code-block:: json
+
+   [
+    {
+        "setVar": "a=1"
+    },
+    {
+        "setVar": ["a=1", "b=2", "c=3"]
+    },
+    {
+        "setVar": "all:a=1"
+    },
+    {
+        "setVar": "nolocal:a=1"
+    }
+   ]
+
+- **all** - Exports a channel variable for the A leg and the B leg.
+- **nolocal** - Exports a channel variable only for the B leg.
+
+unSet
++++++
+
+.. py:module:: unSet
+
+Clears out a channel variable.
+
+.. code-block:: json
+
+    {
+        "unSet": "sip_h_call-info"
+    }
 
 voicemail
 ---------

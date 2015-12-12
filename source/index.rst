@@ -34,6 +34,8 @@ Miscellaneous
 
    hangup-cause-code-table
    tz-table
+   channel-variables
+   channel-states
    tgml
 
 Links

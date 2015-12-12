@@ -96,6 +96,7 @@ Public Route
       ]
     }
 
+.. _tod:
 
 Time of Day Routing
 -------------------
@@ -182,6 +183,8 @@ In the ACR Scheme we have the following conditional statements:
 - Use **if ... then** to specify a block of code to be executed, if a specified condition is true
 - Use **else** to specify a block of code to be executed, if the same condition is false
 - Use **switch** to specify many alternative blocks of code to be executed
+
+You may use any variable setted by :py:mod:`setVar` application, :ref:`tod` or build-in :ref:`channel-variables`.
 
 if
 ++

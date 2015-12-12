@@ -29,6 +29,39 @@ The values for '+' and 'v' may be decimal numbers.
 
 Standard tones can have custom duration per use with the () modifier 7(1000, 500) to generate DTMF 7 for 1 second then pause .5 seconds.
 
+Global varaibles
+++++++++++++++++
+
+Predefined global variables with country tones:
+
+- be-ring=%(1000,3000,425)
+- ca-ring=%(2000,4000,440,480)
+- cn-ring=%(1000,4000,450)
+- cy-ring=%(1500,3000,425)
+- cz-ring=%(1000,4000,425)
+- de-ring=%(1000,4000,425)
+- dk-ring=%(1000,4000,425)
+- dz-ring=%(1500,3500,425)
+- eg-ring=%(2000,1000,475,375)
+- es-ring=%(1500,3000,425)
+- fi-ring=%(1000,4000,425)
+- fr-ring=%(1500,3500,440)
+- hk-ring=%(400,200,440,480);%(400,3000,440,480)
+- hu-ring=%(1250,3750,425)
+- il-ring=%(1000,3000,400)
+- in-ring=%(400,200,425,375);%(400,2000,425,375)
+- jp-ring=%(1000,2000,420,380)
+- ko-ring=%(1000,2000,440,480)
+- pk-ring=%(1000,2000,400)
+- pl-ring=%(1000,4000,425)
+- ro-ring=%(1850,4150,475,425)
+- rs-ring=%(1000,4000,425)
+- ru-ring=%(800,3200,425)
+- sa-ring=%(1200,4600,425)
+- tr-ring=%(2000,4000,450)
+- uk-ring=%(400,200,400,450);%(400,2000,400,450)
+- us-ring=%(2000,4000,440,480)
+
 Examples
 ++++++++
 

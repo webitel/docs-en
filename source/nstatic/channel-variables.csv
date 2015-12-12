@@ -1,0 +1,21 @@
+state;Current channel state of the call
+channel_name;Channel name
+uuid;uuid of this channel's call leg
+read_codec;The read codec variable mean the source codec
+read_rate;The source rate
+write_codec;The destination codec same to write_codec if not transcoded
+write_rate;Destination rate same to read rate if not transcoded
+username;
+caller_id_name;
+caller_id_number;
+ani;ANI of caller, frequently the same as caller ID number
+aniii;ANI II Digits (OLI - Originating Line Information), if available. Refer to: http://www.nanpa.com/number_resource_info/ani_ii_digits.html
+network_addr;IP address of calling party
+destination_number;Destination (dialed) number
+rdnis;Redirected DNIS info
+created_time;
+answered_time;
+privacy_hide_name;
+privacy_hide_number;This variable tells you if the inbound call is asking for CLIR[Calling Line ID presentation Restriction]
+sip_h_p-key-flags;This will contain the optional P-Key-Flags header(s) that may be received from calling endpoint.
+sip_h_referred-by;
