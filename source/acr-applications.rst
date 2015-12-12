@@ -353,6 +353,163 @@ Permits proper answering of multiple simultaneous calls to the same pickup group
         "pickup": "mygroup"
     }
 
+playback
+--------
+
+.. py:module:: playback
+
+Play an audio file or tone stream.
+
+.. code-block:: json
+
+    [{
+      "playback": {
+        "name": "my.mp3",
+        "type": "mp3"
+        }
+    },
+    {
+      "playback": {
+        "name": "L=100;%(100,100,350,440)",
+        "type": "tone"
+        }
+    },
+    {
+        "playback": {
+          "files": [
+            {
+              "name": "welcome-rus.wav",
+              "type": "wav"
+            },
+            {
+              "name": "2000",
+              "type": "silence"
+            },
+            {
+              "name": "russia-eng.wav",
+              "type": "wav"
+            }
+          ]
+        }
+    }]
+
+mp3 and wav
++++++++++++
+
+An any mp3 or wav file uploaded as a **media**.
+
+silence
++++++++
+
+Silence in millisecond.
+
+shout
++++++
+
+Can play remote media stream.
+
+tone
+++++
+
+Generate tone. [L=x;][v=y;]%(<on-duration>, <off-duration>, <freq-1> [, freq-2] [, freq-3] [, freq-n] [;loops=x])
+
+- Durations are specified in milliseconds
+- Frequencies are specified in Hz
+
+**L=x;** create x copies of the specified tone stream in memory before playing. Note that L=-1 is not valid, use loops=-1 to loop continuously. Specify L= at the beginning of the tone definition string.
+
+**;loops=x** Loop x times, use ;loops=-1 for endless loop. This generates the tone, then repeats the generation process so it presumably consumers less cpu and memory than the L= parameter. Note that ;loops=x is postfix notation so it should appear at the end of the tone definition string.
+
+**v=y** Volume of tones expressed as the equivalent in dB (deciBels) in a PCM waveform. 0 = maximum volume, negative integers represent softer volume (loudness). Do not enter positive values greater than zero! Note that non-linear formats such as G.711 and G.723 will offer slightly lower amplitudes as an artifact of their algorithms.
+
+See :ref:`TGML` complete listing of capabilities and syntax.
+
+play and get digits
++++++++++++++++++++
+
+.. code-block:: json
+
+    {
+      "playback": {
+                "name": "enter_ext.wav",
+                "type": "wav",
+                "getDigits": {
+                  "setVar": "getIvrDigit",
+                  "min": 3,
+                  "max": 4,
+                  "tries": 1,
+                  "timeout": 2000
+                }
+      }
+    }
+
++--------------+------------------------------------------------------------------------------------+
+| ``setVar``   | Channel variable into which digits should be placed.                               |
++--------------+------------------------------------------------------------------------------------+
+| ``min``      | Minimum number of digits to fetch (minimum value of 0).                            |
++--------------+------------------------------------------------------------------------------------+
+| ``max``      | Maximum number of digits to fetch (maximum value of 128).                          |
++--------------+------------------------------------------------------------------------------------+
+| ``tries``    | Numbers of tries for the sound to play.                                            |
++--------------+------------------------------------------------------------------------------------+
+| ``timeout``  | Number of milliseconds to wait for a dialed response after the file playback ends. |
++--------------+------------------------------------------------------------------------------------+
+
+queue
+-----
+
+.. py:module:: queue
+
+An inbound call queuing application that can be used for call center needs.
+
+.. code-block:: json
+
+    [
+      {
+        "queue": {
+          "name": "myQueueName",
+          "timer": {
+            "interval": 90,
+            "tries": 1,
+            "actions": [
+              {
+                "ccPosition": {
+                  "var": "cc_my_position"
+                }
+              },
+              {
+                "playback": {
+                  "files": [
+                    {
+                      "name": "ivr/ivr-you_are_number.wav",
+                      "type": "local"
+                    },
+                    {
+                      "name": "${say_string en.wav en number pronounced ${cc_my_position}}",
+                      "type": "local"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+
+timer
++++++
+
++----------------+------------------------------------------------------------+
+| ``actions``    | Execute some set of actions.                               |
++----------------+------------------------------------------------------------+
+| ``interval``   | How periodically to execute actions in seconds.            |
++----------------+------------------------------------------------------------+
+| ``tries``      | Numbers of tries to execute actions                        |
++----------------+------------------------------------------------------------+
+| ``ccPosition`` | Set current position in a variable.                        |
++----------------+------------------------------------------------------------+
+
 Recording
 ---------
 
@@ -468,13 +625,30 @@ Disable music on hold.
 
 shout
 +++++
+
 Can play remote stream. You can set internet radio as Your ringback tone, just set in the name: http://online-radioroks.tavrmedia.ua/RadioROKS_32
 
 tone
 ++++
-Generate tone.
 
-You may set **$${ru-ring}** globale variables in the name for a russian ringback tone. See :ref:`TGML` complete listing of capabilities and syntax.
+Generate tone. You may set **$${ru-ring}** in the name for a russian ringback tone. See :ref:`TGML` complete listing of capabilities and syntax.
+
+schedule
+--------
+
+.. py:module:: schedule
+
+Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future.
+
+.. code-block:: json
+
+    {
+        "schedule": {
+            "action": "hangup",
+            "seconds": "360",
+            "data": "ALLOTTED_TIMEOUT"
+        }
+    }
 
 sleep
 -----
@@ -487,6 +661,22 @@ Pause the channel for a given number of milliseconds, consuming the audio for th
 
     {
         "sleep": "1000"
+    }
+
+script
+------
+
+.. py:module:: script
+
+Execute `Lua Script`. Scripts must be placed in the **/scripts/lua** directory inside `FreeSWITCH <https://hub.docker.com/r/webitel/freeswitch/>`_ docker container.
+
+.. code-block:: json
+
+    {
+        "script": {
+            "name": "MyLuaScript.lua",
+            "parameters": ["a=Alex", "b=1001"]
+        }
     }
 
 Variables
