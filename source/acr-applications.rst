@@ -711,6 +711,23 @@ Set a channel variable.
 - **all** - Exports a channel variable for the A leg and the B leg.
 - **nolocal** - Exports a channel variable only for the B leg.
 
+exportVars
+++++++++++
+
+.. py:module:: exportVars
+
+`exportVars` lists variables to be exported to the webitel client side upon JavaScript library.
+
+.. code-block:: json
+
+  {
+    "exportVars": [
+      "ivrLang",
+      "mainMenuAction",
+      "subMenuAction"
+    ]
+  }
+
 unSet
 +++++
 

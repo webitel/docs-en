@@ -32,7 +32,7 @@ Standard tones can have custom duration per use with the () modifier 7(1000, 500
 Global varaibles
 ++++++++++++++++
 
-Predefined global variables with country tones:
+Predefined global variables with country ringback tone:
 
 - be-ring=%(1000,3000,425)
 - ca-ring=%(2000,4000,440,480)
