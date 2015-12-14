@@ -163,6 +163,39 @@ The inbound and outbound conference bridge service.
 | ``nomoh``      | Disable music on hold when this member is the only member in the conference.            |
 +----------------+-----------------------------------------------------------------------------------------+
 
+DTMF
+----
+
+`FreeSWITCH` attempts to negotiate `rfc2833` DTMF out-of-band transmission. The `INFO` DTMF is also supported.
+
+inBandDTMF
+++++++++++
+
+.. py:module:: inBandDTMF
+
+You can use ``inBandDTMF`` to enable in-band DTMF detection (i.e. the detection of DTMF tones on a channel). You should do this when you want to be able to identify DTMF tones on a channel that doesn't otherwise support another signaling method (like RFC2833 or INFO).
+
+.. code-block:: json
+
+    [{
+      "inBandDTMF": "start"
+    },
+    {
+      "inBandDTMF": "stop"
+    }]
+
+flushDTMF
++++++++++
+
+.. py:module:: flushDTMF
+
+Flushes DTMFs received on a channel. Useful in cases where callers may have entered extra digits in one dialog and you want to flush them out before sending them into another dialog.
+
+.. code-block:: json
+
+   {
+     "flushDTMF": true
+   }
 
 echo
 ----
@@ -282,24 +315,6 @@ httpRequest
                 }
         }
     }
-
-
-inBandDTMF
-----------
-
-.. py:module:: inBandDTMF
-
-You can use ``inBandDTMF`` to enable in-band DTMF detection (i.e. the detection of DTMF tones on a channel). You should do this when you want to be able to identify DTMF tones on a channel that doesn't otherwise support another signaling method (like RFC2833 or INFO).
-
-.. code-block:: json
-
-    [{
-      "inBandDTMF": "start"
-    },
-    {
-      "inBandDTMF": "stop"
-    }]
-
 
 log
 ---
@@ -721,7 +736,7 @@ setArray
   {
     "setArray": {
       "myArray": [
-        "val1", "val2", "val3
+        "val1", "val2", "val3"
       ]
     }
   }
