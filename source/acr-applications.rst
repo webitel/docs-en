@@ -711,6 +711,23 @@ Set a channel variable.
 - **all** - Exports a channel variable for the A leg and the B leg.
 - **nolocal** - Exports a channel variable only for the B leg.
 
+setArray
+++++++++
+
+.. py:module:: setArray
+
+.. code-block:: json
+
+  {
+    "setArray": {
+      "myArray": [
+        "val1", "val2", "val3
+      ]
+    }
+  }
+
+Referencing an array element: `${myArray[1]}`.
+
 exportVars
 ++++++++++
 
