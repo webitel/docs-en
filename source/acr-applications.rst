@@ -453,22 +453,25 @@ play and get digits
                   "min": 3,
                   "max": 4,
                   "tries": 1,
-                  "timeout": 2000
+                  "timeout": 2000,
+                  "flushDTMF": true
                 }
       }
     }
 
-+--------------+------------------------------------------------------------------------------------+
-| ``setVar``   | Channel variable into which digits should be placed.                               |
-+--------------+------------------------------------------------------------------------------------+
-| ``min``      | Minimum number of digits to fetch (minimum value of 0).                            |
-+--------------+------------------------------------------------------------------------------------+
-| ``max``      | Maximum number of digits to fetch (maximum value of 128).                          |
-+--------------+------------------------------------------------------------------------------------+
-| ``tries``    | Numbers of tries for the sound to play.                                            |
-+--------------+------------------------------------------------------------------------------------+
-| ``timeout``  | Number of milliseconds to wait for a dialed response after the file playback ends. |
-+--------------+------------------------------------------------------------------------------------+
++---------------+------------------------------------------------------------------------------------+
+| ``setVar``    | Channel variable into which digits should be placed.                               |
++---------------+------------------------------------------------------------------------------------+
+| ``min``       | Minimum number of digits to fetch (minimum value of 0).                            |
++---------------+------------------------------------------------------------------------------------+
+| ``max``       | Maximum number of digits to fetch (maximum value of 128).                          |
++---------------+------------------------------------------------------------------------------------+
+| ``tries``     | Numbers of tries for the sound to play.                                            |
++---------------+------------------------------------------------------------------------------------+
+| ``timeout``   | Number of milliseconds to wait for a dialed response after the file playback ends. |
++---------------+------------------------------------------------------------------------------------+
+| ``flushDTMF`` | Flushes DTMFs received on a channel. Default is `true`.                            |
++---------------+------------------------------------------------------------------------------------+
 
 queue
 -----
@@ -543,8 +546,8 @@ Record to a file from the channel's input media stream.
             "name": "MySuperFile",
             "terminators": "#",
             "type": "mp3",
-            "maxSec": "60",
-            "silenceHits": "5",
+            "maxSec": 60,
+            "silenceHits": 5,
             "email": ["office@webitel.com", "admin@webitel.com"]
         }
     }
@@ -576,10 +579,10 @@ Records an entire phone call or session.
         "recordSession": {
             "action": "start",
             "type": "mp3",
-            "stereo": "true",
-            "bridged": "true",
-            "minSec": "2",
-            "followTransfer": "true",
+            "stereo": true,
+            "bridged": true,
+            "minSec": 2,
+            "followTransfer": true,
             "email": ["office@webitel.com", "admin@webitel.com"]
         }
     }
@@ -660,7 +663,7 @@ Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future.
     {
         "schedule": {
             "action": "hangup",
-            "seconds": "360",
+            "seconds": 360,
             "data": "ALLOTTED_TIMEOUT"
         }
     }
@@ -675,7 +678,7 @@ Pause the channel for a given number of milliseconds, consuming the audio for th
 .. code-block:: json
 
     {
-        "sleep": "1000"
+        "sleep": 1000
     }
 
 script
@@ -741,7 +744,7 @@ setArray
     }
   }
 
-Referencing an array element: `${myArray[1]}`.
+Referencing an array element: `${myArray[0]}`, `${myArray[1]}`, `${myArray[3]}`.
 
 exportVars
 ++++++++++
