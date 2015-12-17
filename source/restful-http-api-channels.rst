@@ -153,6 +153,8 @@ Updating channel state
    :statuscode 200: No error
    :statuscode 400: Bad request
 
+   **CURL example**:
+
    ::
 
     curl -XPUT  -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzUxMjk5ODF9.DFtcez2ntKLsTsQ5SHYtlwXLf9UC3UbxfMIFRZlCgOE' -H 'X-Key: 1809dfa7-243c-49a6-a5ef-67f9d9565f3f'  -H 'Content-Type: application/json' -d '{"state": "hold"}'  "https://api.webitel.com:10022/api/v2/channels/6efeb018-7356-4a2b-9ffc-78e78a9b8c47"
@@ -185,6 +187,8 @@ Hanging up active channel
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :statuscode 200: No error
    :statuscode 400: Bad request
+
+   **CURL example**:
 
    ::
 
@@ -226,6 +230,8 @@ Eavesdropping active channel
    :<json string user: Webitel user ID for callback.
    :statuscode 200: No error
    :statuscode 400: Bad request
+
+   **CURL example**:
 
    ::
 

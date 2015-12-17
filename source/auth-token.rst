@@ -47,6 +47,8 @@ Create an auth token
    :statuscode 401: Invalid credentials
    :statuscode 404: User not found
 
+   **CURL example**:
+
    ::
 
     curl -X POST -H 'Content-Type: application/json' -d '{"username":"100@mydomain.com","password":"secret"}' "https://api.webitel.com:10022/login"
@@ -77,6 +79,8 @@ Delete an auth token
 
    :statuscode 200: No error
    :statuscode 401: Bad caller
+
+   **CURL example**:
 
    ::
 

@@ -50,6 +50,8 @@ Getting domains list
    :statuscode 200: No error
    :statuscode 400: Bad request
 
+   **CURL example**:
+
    ::
 
     curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDY1MTUxNzB9.3L4D21aMdNxnm9lZTklt6EvjeNP9RLLKLJtFqVLnSCs' -H 'X-Key: eb76bb9f-6366-4168-b0f1-dac6f15adceb' "https://api.webitel.com:10022/api/v2/domains"
@@ -96,6 +98,8 @@ Create a domain
    :statuscode 200: No error
    :statuscode 400: Bad request
 
+   **CURL example**:
+
    ::
 
     curl -XPOST -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDY1MTUxNzB9.3L4D21aMdNxnm9lZTklt6EvjeNP9RLLKLJtFqVLnSCs' -H 'X-Key:eb76bb9f-6366-4168-b0f1-dac6f15adceb' -H 'Content-Type: application/json' -d '{"domain_name": "mydomain.com","customer_id": "20150909","variables": ["default_language=ru"],"parameters": []}' "https://api.webitel.com:10022/api/v2/domains"
@@ -129,6 +133,8 @@ Delete a domain
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :statuscode 200: No error
    :statuscode 400: Bad request
+
+   **CURL example**:
 
    ::
 

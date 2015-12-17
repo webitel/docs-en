@@ -50,6 +50,8 @@ Webitel Status
    :statuscode 200: No error
    :statuscode 401: Invalid credentials
 
+   **CURL example**:
+
    ::
 
     curl -X GET -H 'X-Access-Token: yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDUzOTY0ODh9.xCf6fbvOPc-CkYdD9MPxLXBEukHm1KX6w5zN5q55OBQ' -H 'X-Key: c1d19874-f2bb-4284-94ac-043cb97288fe' "https://api.webitel.com:10022/api/v2/status"
