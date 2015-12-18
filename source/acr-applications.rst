@@ -744,7 +744,7 @@ setArray
     }
   }
 
-Referencing an array element: `${myArray[0]}`, `${myArray[1]}`, `${myArray[3]}`.
+Referencing an array element: `${myArray[0]}`, `${myArray[1]}`, `${myArray[2]}`.
 
 exportVars
 ++++++++++

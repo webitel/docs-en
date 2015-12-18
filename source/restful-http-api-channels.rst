@@ -69,6 +69,8 @@ Getting active channel list
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :statuscode 200: No error
 
+   **CURL example**:
+
    ::
 
     curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' "https://api.webitel.com:10022/api/v2/channels"
@@ -112,6 +114,8 @@ Originating a new call
    :reqheader Content-Type: `application/json`
    :statuscode 200: No error
    :statuscode 400: Bad request
+
+   **CURL example**:
 
    ::
 
