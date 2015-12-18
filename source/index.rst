@@ -45,6 +45,7 @@ Miscellaneous
 Links
 =====
 
+* `How to run a webitel <https://github.com/webitel/orchestration>`_
 * `Webitel Customer Support Portal <https://my.webitel.com/servicedesk/customer/portal/1/group/31>`_
 * `Worldwide Frequencies and Cadences Listed by ITU-T <http://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.180-2010-PDF-E.pdf>`_
 
