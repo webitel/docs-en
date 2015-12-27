@@ -100,12 +100,20 @@ parameters
 ++++++++++
 
 +--------------------------------------------+-------------------------------------------------------------------------------------+
+| ``continue_on_fail=true``                  | Controls what happens when the called party can not be reached (busy/offline).      |
+|                                            | If "true" the dialplan continues to be processed. If "false" - will stop processing.|
++--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``instant_ringback=true``                  | Ringback will not wait for indication before sending ringback tone to calling party.|
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``ignore_early_media=true``                | Ignore early media from the endpoint.                                               |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``ignore_early_media=ring_ready``          | The same as ``ignore_early_media=true`` but also send a SIP 180 to the inbound leg  |
 |                                            | when the first SIP 183 is caught.                                                   |
++--------------------------------------------+-------------------------------------------------------------------------------------+
+| ``hangup_after_bridge=true``               | Controls what happens to a calling (A) party when in a bridge state and the         |
+|                                            | called (B) party hangs up. If "true" the dialplan will stop processing and the      |
+|                                            | A leg will be terminated when the B leg terminates. If "false" (default) the        |
+|                                            | dialplan continues to be processed after the B leg terminates.                      |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``call_timeout=20``                        | Controls how long (in seconds) to ring the endpoint. Default is 60 seconds.         |
 +--------------------------------------------+-------------------------------------------------------------------------------------+

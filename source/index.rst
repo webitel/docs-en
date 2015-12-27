@@ -25,9 +25,6 @@ Advanced Call Routing
    :maxdepth: 2
 
    acr-scheme
-.. toctree::
-   :maxdepth: 1
-
    acr-applications
 
 Miscellaneous
