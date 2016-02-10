@@ -337,6 +337,32 @@ Logs a string of text to the console.
         "log": "my log message"
     }
 
+math
+----
+
+.. py:module:: math
+
+The Math application allows you to perform mathematical tasks on numbers.
+
+.. code-block:: json
+
+    {
+    "math": {
+        "data": "${caller_id_array}",
+        "fn": "random",
+        "setVar": "new_random_caller_id"
+        }
+    }
+
+fn
+++
+
+- ``random``: returns a random number from array
+- ``min`` and ``max``: can be used to find the lowest or highest value in a list of arguments
+- ``round``: rounds a number to the nearest integer
+- ``ceil``: rounds a number up to the nearest integer
+- ``floor``: rounds a number down to the nearest integer
+
 park
 ----
 
@@ -838,4 +864,3 @@ check voicemail
 +-----------------------+------------------------------------------------------------------------+
 | ``auth``              | Will prompt for PIN if is set to the **true**.                         |
 +-----------------------+------------------------------------------------------------------------+
-
