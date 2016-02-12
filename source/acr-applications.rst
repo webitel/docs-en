@@ -241,6 +241,30 @@ Sending an Email.
         }
     }
 
+eavesdrop
+---------
+
+.. py:module:: eavesdrop
+
+``eavesdrop`` provides the ability to spy on a channel.
+
+.. code-block:: json
+
+    {
+        "eavesdrop": {
+            "user": "1000",
+            "spy": false
+    }
+
+DTMF signals during eavesdrop:
+
+- **2** to speak with the uuid
+- **1** to speak with the other half
+- **3** to engage a three way
+- **0** to restore eavesdrop.
+
+The *spy: true* provides persistent eavesdrop on all channels bridged to a certain user.
+
 FAX
 ---
 
@@ -255,7 +279,7 @@ Receive a FAX as a PDF file.
 
     {
         "receiveFax": {
-            "enable_t38": "false",
+            "enable_t38": false,
             "email": ["office@webitel.com", "admin@webitel.com"]
         }
     }
