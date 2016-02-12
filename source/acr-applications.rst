@@ -258,7 +258,7 @@ eavesdrop
 
 DTMF signals during eavesdrop:
 
-- **2** to speak with the uuid
+- **2** to speak with the user
 - **1** to speak with the other half
 - **3** to engage a three way
 - **0** to restore eavesdrop.
