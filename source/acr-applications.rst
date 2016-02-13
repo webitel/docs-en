@@ -254,6 +254,7 @@ eavesdrop
         "eavesdrop": {
             "user": "1000",
             "spy": false
+        }
     }
 
 DTMF signals during eavesdrop:
@@ -307,7 +308,6 @@ Immediately goto an another extension (or route) and exit from current extension
     }]
 
 Goto extension called my_extension in the **default** or **public** route.
-
 
 hangup
 ------
@@ -725,6 +725,22 @@ Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future.
             "data": "ALLOTTED_TIMEOUT"
         }
     }
+
+sipRedirect
+-----------
+
+.. py:module:: sipRedirect
+
+Can redirect a SIP channel to another endpoint.
+
+.. code-block:: json
+
+    [{
+        "sipRedirect": "sip:foo@end.com"
+    },
+    {
+        "sipRedirect": ["sip:foo@bar.com", "sip:foo@end.com"]
+    }]
 
 sleep
 -----
