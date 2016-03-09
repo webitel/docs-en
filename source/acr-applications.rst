@@ -3,6 +3,29 @@
 Callflow Applications
 =====================
 
+agent
+-----
+
+.. py:module:: agent
+
+Modify agent status.
+
+.. code-block:: json
+
+   {  
+      "agent:  {
+          "name": "1000",
+          "status": "Available,
+          "state":  "Waiting"
+      }
+   }
+
++--------+------------------------------------------------------------+
+| status |  Logged Out, Available, Available (On Demand) or On Break. |
++--------+------------------------------------------------------------+
+| state  |  Waiting or Idle.                                          |
++--------+------------------------------------------------------------+
+
 answer
 ------
 

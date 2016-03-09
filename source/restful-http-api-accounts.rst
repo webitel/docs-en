@@ -51,7 +51,7 @@ Getting accounts list
 
    ::
 
-    curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1'  "https://api.webitel.com:10022/api/v2/accounts"
+    curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1'  "https://cloud.webitel.com/engine/api/v2/accounts"
 
 Get an account info
 +++++++++++++++++++
@@ -105,12 +105,13 @@ Get an account info
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :statuscode 200: No error
    :statuscode 400: Bad request
+   :statuscode 404: Not found
 
    **CURL example**:
 
    ::
 
-    curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' "https://api.webitel.com:10022/api/v2/accounts/100"
+    curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' "https://cloud.webitel.com/engine/api/v2/accounts/100"
 
 Creat an account
 ++++++++++++++++
@@ -179,7 +180,7 @@ Creat an account
 
    ::
 
-    curl -XPOST -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1'  -H 'Content-Type: application/json' -d '{"login": "109","password": "109","role": "user","domain": "10.10.10.144", "parameters": ["vm-enabled=true", "webitel-extensions=109"], "variables": ["default_language=ru"]}' "https://api.webitel.com:10022/api/v2/accounts"
+    curl -XPOST -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1'  -H 'Content-Type: application/json' -d '{"login": "109","password": "109","role": "user","domain": "10.10.10.144", "parameters": ["vm-enabled=true", "webitel-extensions=109"], "variables": ["default_language=ru"]}' "https://cloud.webitel.com/engine/api/v2/accounts"
 
 Updating accounts
 +++++++++++++++++
@@ -235,10 +236,11 @@ Updating accounts
    :reqheader Content-Type: `application/json`
    :statuscode 200: No error
    :statuscode 400: Bad request
+   :statuscode 404: Not found
 
    ::
 
-    curl -XPUT -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' -H 'Content-Type: application/json' -d '{"password": "103","variables": ["default_language=ru"]}' "https://api.webitel.com:10022/api/v2/accounts/103"
+    curl -XPUT -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' -H 'Content-Type: application/json' -d '{"password": "103","variables": ["default_language=ru"]}' "https://cloud.webitel.com/engine/api/v2/accounts/103"
 
 Deleting accounts
 +++++++++++++++++
@@ -272,5 +274,5 @@ Deleting accounts
 
    ::
 
-    curl -XDELETE -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' "https://api.webitel.com:10022/api/v2/accounts/109"
+    curl -XDELETE -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIxNzA0NDk2NTB9.WqTx_dpbuTyp-l8w6rmQhzoatI-qPRkoM-hmxXTAzaU' -H 'X-Key: bed5ea60-84e7-4eba-b6ad-e3a23f220be1' "https://cloud.webitel.com/engine/api/v2/accounts/109"
 
