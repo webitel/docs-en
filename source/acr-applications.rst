@@ -13,9 +13,9 @@ Modify agent status.
 .. code-block:: json
 
    {  
-      "agent:  {
+      "agent":  {
           "name": "1000",
-          "status": "Available,
+          "status": "Available",
           "state":  "Waiting"
       }
    }
@@ -97,6 +97,13 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
                 "type": "user",
                 "domainName": "10.10.10.144",
                 "parameters": ["d=3"]
+              },
+              {
+                "type": "sipUri",
+                "profile": "nonreg",
+                "host": "wbtl.pstn.twilio.com",
+                "dialString": "+1&reg0.$1",
+                "parameters": ["absolute_codec_string=PCMU"]
               }]
         }
     }
@@ -107,6 +114,7 @@ endpoints types
 - **sipGateway** 
 - **user**
 - **device**
+- **sipUri**
 
 strategy
 ++++++++
