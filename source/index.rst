@@ -15,7 +15,9 @@ RESTful HTTP API v2
    auth-token
    restful-http-api-domains
    restful-http-api-accounts
+   restful-http-api-callflow
    restful-http-api-channels
+   restful-http-api-email
    restful-http-api-misc
 
 Advanced Call Routing

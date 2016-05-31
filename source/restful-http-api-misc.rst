@@ -19,32 +19,37 @@ Webitel Status
 
       HTTP/1.1 200 OK
 
-        {
-          "Version": "3.1#9-sha1:4d2ab1a",
-          "Node memory": {
-            "rss": "87.5 MB",
-            "heapTotal": "32.4 MB",
-            "heapUsed": "27 MB"
-          },
-          "Process ID": 20,
-          "Process up time": "142:33:17",
-          "OS": {
-            "Total memory": "15.6 GB",
-            "Free memory": "11.7 GB",
-            "Platform": "linux",
-            "Name": "Linux",
-            "Architecture": "x64"
-          },
-          "Users_Session": 2,
-          "Domain_Session": 2,
-          "CRASH_WORKER_COUNT": 0,
-          "Webitel": {
-            "Status": "Connected",
-            "ApiQueue": 0,
-            "CmdQueue": 0
-          },
-          "freeSWITCH": "UP 0 years, 13 days, 17 hours, 50 minutes, 22 seconds, 52 milliseconds, 839 microseconds\nFreeSWITCH (Version 1.6.5 git d5520a6 2015-11-19 20:27:21Z 64bit) is ready\n58619 session(s) since startup\n0 session(s) - peak 69, last 5min 0 \n0 session(s) per Sec out of max 30, peak 16, last 5min 0 \n1000 session(s) max\nmin idle cpu 0.00/98.73\nCurrent Stack Size/Max 240K/240K\n"
-        }
+      {
+        "Version": "3.3.0-sha1:73b7f480dcf48e52b87e4dad6af38550d6a3690e",
+        "Node memory": {
+          "rss": "58.4 MB",
+          "heapTotal": "35.8 MB",
+          "heapUsed": "28.6 MB"
+        },
+        "Process ID": 11,
+        "Socket sessions": 200,
+        "Process up time": "144:34:32",
+        "OS": {
+          "Total memory": "7.7 GB",
+          "Free memory": "5.2 GB",
+          "Platform": "linux",
+          "Name": "Linux",
+          "Architecture": "x64"
+        },
+        "Users session": 50,
+        "Max users session": 100,
+        "Domain session": 10,
+        "Webitel": {
+          "Status": "Connected",
+          "ApiQueue": 0,
+          "CmdQueue": 0,
+          "Version": "3.3.0",
+          "Sid": "00aa0000-0000-000a-0a00-aa0000000000\n"
+        },
+        "CRASH_WORKER_COUNT": "0",
+        "freeSWITCH": "UP 0 years, 0 days, 4 hours, 34 minutes, 30 seconds, 956 milliseconds, 139 microseconds\nFreeSWITCH (Version 1.6.8 git 99de0ad 2016-05-05 15:38:32Z 64bit) is ready\n11893 session(s) since startup\n10 session(s) - peak 20, last 5min 10 \n0 session(s) per Sec out of max 30, peak 37, last 5min 0 \n1000 session(s) max\nmin idle cpu 0.00/95.93\nCurrent Stack Size/Max 240K/240K\n",
+        "Node version": "v6.2.0"
+      }
 
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :statuscode 200: No error
@@ -54,5 +59,4 @@ Webitel Status
 
    ::
 
-    curl -X GET -H 'X-Access-Token: yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDUzOTY0ODh9.xCf6fbvOPc-CkYdD9MPxLXBEukHm1KX6w5zN5q55OBQ' -H 'X-Key: c1d19874-f2bb-4284-94ac-043cb97288fe' "https://api.webitel.com:10022/api/v2/status"
-
+    curl -X GET -H 'X-Access-Token: yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDUzOTY0ODh9.xCf6fbvOPc-CkYdD9MPxLXBEukHm1KX6w5zN5q55OBQ' -H 'X-Key: c1d19874-f2bb-4284-94ac-043cb97288fe' "https://app.webitel.com/api/v2/status"
