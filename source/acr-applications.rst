@@ -364,10 +364,13 @@ httpRequest
 
     {
         "httpRequest": {
-                "url": "https://sales.bpmonline.com/0/ServiceModel/GetCallerOwnerService.svc/GetCallerOwner",
+                "url": "https://sales.bpmonline.com/0/ServiceModel/GetCallerOwnerService.svc/GetCallerOwner/${id}/",
                 "method": "POST",
                 "headers": {
                     "Content-Type":"application/json"
+                },
+                "path": {
+                    "id": "${caller_id_number}"
                 },
                 "data": {
                     "callerIdNumber": "${caller_id_number}"
@@ -397,17 +400,21 @@ math
 
 .. py:module:: math
 
-The Math application allows you to perform mathematical tasks on numbers.
+Math application allows you to perform mathematical tasks on numbers.
 
 .. code-block:: json
 
     {
     "math": {
         "data": "${caller_id_array}",
-        "fn": "random",
-        "setVar": "new_random_caller_id"
+        "setVar": "new_random_caller_id",
+        "fn": "random"
         }
     }
+
+- ``data``: input variable, array or string
+- ``setVar``: assign the output of a function to a variable
+- ``fn``: JavaScript function
 
 fn
 ++
@@ -417,6 +424,8 @@ fn
 - ``round``: rounds a number to the nearest integer
 - ``ceil``: rounds a number up to the nearest integer
 - ``floor``: rounds a number down to the nearest integer
+
+`JavaScript Math <http://www.w3schools.com/js/js_math.asp>`_
 
 park
 ----
@@ -802,6 +811,47 @@ Execute `Lua Script`. Scripts must be placed in the **/scripts/lua** directory i
         }
     }
 
+string
+------
+
+.. py:module:: string
+
+String application help you to work with strings.
+
+.. code-block:: json
+
+    {
+		"string": {
+			
+			"data": "${destination_number}",
+            "setVar": "myVar",
+			"fn": "slice",
+			"args": -3
+		}
+	}
+
+- ``data``: input variable or string
+- ``setVar``: assign the output of a function to a variable
+- ``fn``: JavaScript function
+- ``args``: function arguments
+
+fn
+++
+
+- ``length``: returns the length of a string
+- ``indexOf`` and ``lastIndexOf``: returns the index of (the position of) the first or last occurrence of a specified text in a string
+- ``search``: searches a string for a specified value and returns the position of the match
+- ``slice``: extracts a part of a string and returns the extracted part in a new string
+- ``substring``: is similar to slice. The difference is that ``substring`` cannot accept negative indexes.
+- ``substr``: is similar to slice. The difference is that the second parameter specifies the length of the extracted part.
+- ``replace``: replaces a specified value with another value in a string
+- ``toUpperCase`` or ``toLowerCase``: A string is converted to upper case or to lower case
+- ``charAt``: returns the character at a specified index (position) in a string
+- ``charCodeAt``: returns the unicode of the character at a specified index in a string
+- ``split``: A string can be converted to an array with the ``split`` function
+
+`JavaScript String <http://www.w3schools.com/js/js_string_methods.asp>`_
+
 Variables
 ---------
 
@@ -888,8 +938,8 @@ voicemail
 
 Voicemail application lets you send calls to voicemail, which allows callers to leave messages for users and allows users to retrieve and manage any messages left by callers.
 
-leave voicemail
-+++++++++++++++
+leave a voicemail message
++++++++++++++++++++++++++
 
 .. code-block:: json
 
@@ -915,8 +965,8 @@ leave voicemail
 | ``cc``                | Inject the message into the specified voicemail mailbox.               |
 +-----------------------+------------------------------------------------------------------------+
 
-check voicemail
-+++++++++++++++
+check a voicemail message
++++++++++++++++++++++++++
 
 .. code-block:: json
 
