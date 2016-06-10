@@ -501,8 +501,14 @@ Play an audio file or tone stream.
               "type": "silence"
             },
             {
-              "name": "russia-eng.wav",
-              "type": "wav"
+              "name": "ivr/ivr-you_are_number.wav",
+              "type": "local"
+            },
+            {
+              "name": "${cc_my_position}",
+              "type": "say",
+              "lang": "en",
+              "method": "NUMBER pronounced"
             }
           ]
         }
@@ -512,6 +518,26 @@ mp3 and wav
 +++++++++++
 
 An any mp3 or wav file uploaded as a **media**.
+
+say
++++
+
+The say type will use the pre-recorded sound files to read or say various things like dates, times, digits, etc. The say application can read digits and numbers as well as dollar amounts, date/time values and IP addresses. It can also spell out alpha-numeric text, including punctuation marks.
+
+**lang**:
+
+- ``en`` - English sound files;
+- ``ru`` - Russina sound files.
+
+**method**:
+
+Say type is one of the following: NUMBER, ITEMS, CURRENCY, TIME_MEASUREMENT, CURRENT_DATE, CURRENT_TIME, CURRENT_DATE_TIME, TELEPHONE_NUMBER, TELEPHONE_EXTENSION, URL, IP_ADDRESS, EMAIL_ADDRESS, ACCOUNT_NUMBER, NAME_SPELLED, NAME_PHONETIC, SHORT_DATE_TIME
+
+Say method is one of the following (for example, passing a value of "42"):
+
+- ``pronounced`` - cardinal number, e.g. "forty two";
+- ``iterated`` - nominal number, e.g. "four two";
+- ``counted`` - ordinal number, e.g. "forty second".
 
 silence
 +++++++
@@ -599,13 +625,15 @@ An inbound call queuing application that can be used for call center needs.
                 "playback": {
                   "files": [
                     {
-                      "name": "ivr/ivr-you_are_number.wav",
-                      "type": "local"
+                        "name": "ivr/ivr-you_are_number.wav",
+                        "type": "local"
                     },
                     {
-                      "name": "${say_string en.wav en number pronounced ${cc_my_position}}",
-                      "type": "local"
-                    }
+                        "name": "${cc_my_position}",
+                        "type": "say",
+                        "lang": "en",
+                        "method": "number pronounced"
+				    }
                   ]
                 }
               }
