@@ -814,6 +814,28 @@ Can redirect a SIP channel to another endpoint.
         "sipRedirect": ["sip:foo@bar.com", "sip:foo@end.com"]
     }]
 
+setSounds
+---------
+
+.. py:module:: setSounds
+
+Set sound file package. There are a number of sound file packages available.
+
+.. code-block:: json
+
+    {
+        "setSounds": {
+            "voice": "elena",
+            "lang": "ru_RU"
+        }
+    }
+
++-------------+---------------------------------------------------+
+| English     | "voice": "callie", "lang": "en_US" *(default)*    |
++-------------+---------------------------------------------------+
+| Russian     | "voice": "elena", "lang": "ru_RU"                 |
++-------------+---------------------------------------------------+
+
 sleep
 -----
 
