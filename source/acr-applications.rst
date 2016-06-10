@@ -62,7 +62,11 @@ The blackList application executes various actions for the blacklisted numbers.
     {
         "blackList": {
             "name": "myNewBlackList",
-            "action": {[]}
+            "action": [
+                {
+                    "hangup": "INCOMING_CALL_BARRED"
+                }
+            ]
         }
     }
 
@@ -874,26 +878,25 @@ String application help you to work with strings.
 
 .. code-block:: json
 
-    {
-		"string": {
-			
-			"data": "${destination_number}",
+    [{
+        "string": {		
+            "data": "${destination_number}",
             "setVar": "myVar",
-			"fn": "slice",
-			"args": -3
-		}
-	},
-    {
-		"string": {
-			"data": "${caller_id_number}",
-			"fn": "replace",
-			"setVar": "effective_caller_id_number",
-			"args": [
-				"/^0/",
-				"+84"
-			]
-		}
-	}
+            "fn": "slice",
+            "args": -3
+        }
+     },
+     {
+        "string": {
+            "data": "${caller_id_number}",
+            "fn": "replace",
+            "setVar": "effective_caller_id_number",
+            "args": [
+                "/^0/",
+                "+84"
+            ]
+        }
+    }]
 
 - ``data``: input variable or string
 - ``setVar``: assign the output of a function to a variable
