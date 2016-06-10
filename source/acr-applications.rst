@@ -531,9 +531,11 @@ The say type will use the pre-recorded sound files to read or say various things
 
 **method**:
 
-Say type is one of the following: NUMBER, ITEMS, CURRENCY, TIME_MEASUREMENT, CURRENT_DATE, CURRENT_TIME, CURRENT_DATE_TIME, TELEPHONE_NUMBER, TELEPHONE_EXTENSION, URL, IP_ADDRESS, EMAIL_ADDRESS, ACCOUNT_NUMBER, NAME_SPELLED, NAME_PHONETIC, SHORT_DATE_TIME
+An example: "NUMBER pronounced"
 
-Say method is one of the following (for example, passing a value of "42"):
+Can be one of the following: NUMBER, ITEMS, CURRENCY, TIME_MEASUREMENT, CURRENT_DATE, CURRENT_TIME, CURRENT_DATE_TIME, TELEPHONE_NUMBER, TELEPHONE_EXTENSION, URL, IP_ADDRESS, EMAIL_ADDRESS, ACCOUNT_NUMBER, NAME_SPELLED, NAME_PHONETIC, SHORT_DATE_TIME
+
+And method is one of the following (for example, passing a value of "42"):
 
 - ``pronounced`` - cardinal number, e.g. "forty two";
 - ``iterated`` - nominal number, e.g. "four two";
