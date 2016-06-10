@@ -252,6 +252,8 @@ Simply returns all audio sent, including voice, DTMF, etc after the specified de
 Email
 -----
 
+For sending emails, you need to configure :ref:`restful-http-api-email`.
+
 sendEmail
 +++++++++
 
@@ -319,7 +321,7 @@ Receive a FAX as a PDF file.
 +----------------+-----------------------------------------------------------------------------------------+
 | ``enable_t38`` | If you want Webitel to send the re-INVITE for T.38 (per the standard) set to **false**. |
 +----------------+-----------------------------------------------------------------------------------------+
-| ``email``      | Send PDF file to Email *(optional)*.                                                    |
+| ``email``      | Send PDF file to Email *(optional)*. :ref:`restful-http-api-email` is required.         |
 +----------------+-----------------------------------------------------------------------------------------+
 
 goto
@@ -650,19 +652,19 @@ Record to a file from the channel's input media stream.
         }
     }
 
-+--------------------+---------------------------------------------------------------------------------------+
-| ``name``           | Recorded file name.                                                                   |
-+--------------------+---------------------------------------------------------------------------------------+
-| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                              |
-+--------------------+---------------------------------------------------------------------------------------+
-| ``terminators``    | Will set # as recording session terminator.                                           |
-+--------------------+---------------------------------------------------------------------------------------+
-| ``maxSec``         | The maximum duration of the recording in seconds.                                     |
-+--------------------+---------------------------------------------------------------------------------------+
-| ``silenceHits``    | How many seconds of silence will be tolerated before the recording stops.             |
-+--------------------+---------------------------------------------------------------------------------------+
-| ``email``          | Send recorded file to the Email *(optional)*.                                         |
-+--------------------+---------------------------------------------------------------------------------------+
++--------------------+------------------------------------------------------------------------------------------+
+| ``name``           | Recorded file name.                                                                      |
++--------------------+------------------------------------------------------------------------------------------+
+| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                                 |
++--------------------+------------------------------------------------------------------------------------------+
+| ``terminators``    | Will set # as recording session terminator.                                              |
++--------------------+------------------------------------------------------------------------------------------+
+| ``maxSec``         | The maximum duration of the recording in seconds.                                        |
++--------------------+------------------------------------------------------------------------------------------+
+| ``silenceHits``    | How many seconds of silence will be tolerated before the recording stops.                |
++--------------------+------------------------------------------------------------------------------------------+
+| ``email``          | Send recorded file to the Email *(optional)*. :ref:`restful-http-api-email` is required. |
++--------------------+------------------------------------------------------------------------------------------+
 
 recordSession
 +++++++++++++
@@ -700,7 +702,7 @@ Records an entire phone call or session.
 +--------------------+------------------------------------------------------------------------------------------+
 | ``followTransfer`` | If you want the call recording to continue after transferring, set variable to **true**. |
 +--------------------+------------------------------------------------------------------------------------------+
-| ``email``          | Send recorded file to the Email *(optional)*.                                            |
+| ``email``          | Send recorded file to the Email *(optional)*. :ref:`restful-http-api-email` is required. |
 +--------------------+------------------------------------------------------------------------------------------+
 
 ringback
@@ -827,6 +829,17 @@ String application help you to work with strings.
             "setVar": "myVar",
 			"fn": "slice",
 			"args": -3
+		}
+	},
+    {
+		"string": {
+			"data": "${caller_id_number}",
+			"fn": "replace",
+			"setVar": "effective_caller_id_number",
+			"args": [
+				"/^0/",
+				"+84"
+			]
 		}
 	}
 
