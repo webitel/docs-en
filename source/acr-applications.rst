@@ -54,7 +54,6 @@ blackList
 
 .. py:module:: blackList
 
-
 The blackList application executes various actions for the blacklisted numbers.
 
 .. code-block:: json
@@ -368,25 +367,39 @@ httpRequest
 
 .. code-block:: json
 
+    [{
+        "httpRequest": {
+                "url": "https://sales.bpmonline.com/ServiceModel/AuthService.svc/Login",
+                "method": "POST",
+                "exportCookie": "${my_cookie}",
+                "data": {
+                    "UserName": "Supervisor",
+                    "UserPassword": "Supervisor"
+                }
+        }
+    },
     {
         "httpRequest": {
-                "url": "https://sales.bpmonline.com/0/ServiceModel/GetCallerOwnerService.svc/GetCallerOwner/${id}/",
+                "url": "https://sales.bpmonline.com/${id}/dataservice/json/reply/SelectQuery",
                 "method": "POST",
                 "headers": {
-                    "Content-Type":"application/json"
+                    "Content-Type":"application/json",
+                    "Cookie": "${my_cookie}"
                 },
                 "path": {
-                    "id": "${caller_id_number}"
+                    "id": 0
                 },
                 "data": {
-                    "callerIdNumber": "${caller_id_number}"
+                    "Name": "Supervisor",
+                    "UserID": "Supervisor"
                 },
                 "exportVariables": {
                     "effective_caller_id_name": "callerIdName",
                     "owner_caller_id_number": "callerIdOwner"
                 }
         }
-    }
+    }]
+
 
 log
 ---
@@ -531,7 +544,7 @@ The say type will use the pre-recorded sound files to read or say various things
 **lang**:
 
 - ``en`` - English sound files;
-- ``ru`` - Russina sound files.
+- ``ru`` - Russian sound files.
 
 **method**:
 
@@ -639,7 +652,7 @@ An inbound call queuing application that can be used for call center needs.
                         "type": "say",
                         "lang": "en",
                         "method": "number pronounced"
-				    }
+                    }
                   ]
                 }
               }
