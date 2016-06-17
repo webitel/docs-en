@@ -163,6 +163,21 @@ parameters
 | ``sip_renegotiate_codec_on_reinvite=true`` | Allow SDP codec change with re-INVITE.                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 
+calendar
+----------
+
+.. py:module:: calendar
+
+Set `true` or `false` into the variable when current datetime is in the Calendar.
+
+.. code-block:: json
+
+    {
+        "calendar": {
+            "name": "my Business Calendar",
+            "setVar": "isWorkDay"
+        }
+    }
 
 conference
 ----------
