@@ -164,7 +164,7 @@ parameters
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 
 calendar
-----------
+--------
 
 .. py:module:: calendar
 
@@ -945,6 +945,7 @@ fn
 - ``charAt``: returns the character at a specified index (position) in a string
 - ``charCodeAt``: returns the unicode of the character at a specified index in a string
 - ``split``: A string can be converted to an array with the ``split`` function
+- ``reverse``: Reverse the provided string
 
 `JavaScript String <http://www.w3schools.com/js/js_string_methods.asp>`_
 
