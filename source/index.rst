@@ -39,6 +39,7 @@ Miscellaneous
    tz-table
    channel-variables
    channel-states
+   events-list
    tgml
 
 Links
