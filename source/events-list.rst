@@ -827,3 +827,566 @@ Called when a channel should get destroyed.
         variable_rtp_audio_out_cng_packet_count: 0
         variable_rtp_audio_rtcp_packet_count: 0
         variable_rtp_audio_rtcp_octet_count: 0
+
+CHANNEL_BRIDGE
+++++++++++++++
+
+A call is being bridged between two endpoints.
+
+**Example**::
+
+        Event-Name: CHANNEL_BRIDGE
+        Core-UUID: 78e8c87b-5648-47af-b339-3a3e9a31d55f
+        FreeSWITCH-Hostname: pre.webitel.com
+        FreeSWITCH-Switchname: webitel
+        FreeSWITCH-IPv4: 194.44.1.1
+        FreeSWITCH-IPv6: 2a00:fc00::1
+        Event-Date-Local: 2016-07-15 08:56:06
+        Event-Date-GMT: Fri, 15 Jul 2016 08:56:06 GMT
+        Event-Date-Timestamp: 1468572966127390
+        Event-Calling-File: switch_ivr_bridge.c
+        Event-Calling-Function: switch_ivr_multi_threaded_bridge
+        Event-Calling-Line-Number: 1501
+        Event-Sequence: 334590
+        Bridge-A-Unique-ID: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9
+        Bridge-B-Unique-ID: 88e739f2-0984-4c2c-af9d-7e8fe9a8398f
+        Channel-State: CS_EXECUTE
+        Channel-Call-State: ACTIVE
+        Channel-State-Number: 4
+        Channel-Name: sofia/internal/9999@demo.webitel.com:5070
+        Unique-ID: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9
+        Call-Direction: inbound
+        Presence-Call-Direction: inbound
+        Channel-HIT-Dialplan: true
+        Channel-Presence-ID: 9999@demo.webitel.com
+        Channel-Presence-Data: demo.webitel.com
+        Channel-Call-UUID: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9
+        Answer-State: answered
+        Channel-Read-Codec-Name: PCMU
+        Channel-Read-Codec-Rate: 8000
+        Channel-Read-Codec-Bit-Rate: 64000
+        Channel-Write-Codec-Name: PCMU
+        Channel-Write-Codec-Rate: 8000
+        Channel-Write-Codec-Bit-Rate: 64000
+        Caller-Direction: inbound
+        Caller-Logical-Direction: inbound
+        Caller-Username: 9999
+        Caller-Dialplan: XML
+        Caller-Caller-ID-Name: Igor
+        Caller-Caller-ID-Number: 9999
+        Caller-Orig-Caller-ID-Name: Igor
+        Caller-Orig-Caller-ID-Number: 9999
+        Caller-Callee-ID-Name: Outbound Call
+        Caller-Callee-ID-Number: 100
+        Caller-Network-Addr: 10.10.10.107
+        Caller-ANI: 9999
+        Caller-Destination-Number: 100
+        Caller-Unique-ID: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9
+        Caller-Source: mod_sofia
+        Caller-Context: default
+        Caller-Channel-Name: sofia/internal/9999@demo.webitel.com:5070
+        Caller-Profile-Index: 1
+        Caller-Profile-Created-Time: 1468572961407256
+        Caller-Channel-Created-Time: 1468572961407256
+        Caller-Channel-Answered-Time: 1468572966127390
+        Caller-Channel-Progress-Time: 1468572961627239
+        Caller-Channel-Progress-Media-Time: 1468572961487204
+        Caller-Channel-Hangup-Time: 0
+        Caller-Channel-Transfer-Time: 0
+        Caller-Channel-Resurrect-Time: 0
+        Caller-Channel-Bridged-Time: 1468572966127390
+        Caller-Channel-Last-Hold: 0
+        Caller-Channel-Hold-Accum: 0
+        Caller-Screen-Bit: true
+        Caller-Privacy-Hide-Name: false
+        Caller-Privacy-Hide-Number: false
+        Other-Type: originatee
+        Other-Leg-Direction: outbound
+        Other-Leg-Logical-Direction: inbound
+        Other-Leg-Username: 9999
+        Other-Leg-Dialplan: XML
+        Other-Leg-Caller-ID-Name: 9999
+        Other-Leg-Caller-ID-Number: 9999
+        Other-Leg-Orig-Caller-ID-Name: Igor
+        Other-Leg-Orig-Caller-ID-Number: 9999
+        Other-Leg-Callee-ID-Name: Outbound Call
+        Other-Leg-Callee-ID-Number: 100
+        Other-Leg-Network-Addr: 10.10.10.101
+        Other-Leg-ANI: 9999
+        Other-Leg-Destination-Number: 100
+        Other-Leg-Unique-ID: 88e739f2-0984-4c2c-af9d-7e8fe9a8398f
+        Other-Leg-Source: mod_sofia
+        Other-Leg-Context: default
+        Other-Leg-Channel-Name: sofia/internal/100@10.10.10.101:5064
+        Other-Leg-Profile-Created-Time: 1468572961507188
+        Other-Leg-Channel-Created-Time: 1468572961507188
+        Other-Leg-Channel-Answered-Time: 1468572966107185
+        Other-Leg-Channel-Progress-Time: 1468572961627239
+        Other-Leg-Channel-Progress-Media-Time: 0
+        Other-Leg-Channel-Hangup-Time: 0
+        Other-Leg-Channel-Transfer-Time: 0
+        Other-Leg-Channel-Resurrect-Time: 0
+        Other-Leg-Channel-Bridged-Time: 0
+        Other-Leg-Channel-Last-Hold: 0
+        Other-Leg-Channel-Hold-Accum: 0
+        Other-Leg-Screen-Bit: true
+        Other-Leg-Privacy-Hide-Name: false
+        Other-Leg-Privacy-Hide-Number: false
+        variable_direction: inbound
+        variable_uuid: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9
+        variable_session_id: 261
+        variable_sip_from_user: 9999
+        variable_sip_from_port: 5070
+        variable_sip_from_uri: 9999@demo.webitel.com:5070
+        variable_sip_from_host: demo.webitel.com
+        variable_video_media_flow: sendrecv
+        variable_channel_name: sofia/internal/9999@demo.webitel.com:5070
+        variable_sip_call_id: 1142818458@10.10.10.107
+        variable_ep_codec_string: CORE_PCM_MODULE.PCMU@8000h@20i@64000b,CORE_PCM_MODULE.PCMA@8000h@20i@64000b,mod_bcg729.G729@8000h@20i@8000b,mod_spandsp.G722@8000h@20i@64000b
+        variable_sip_local_network_addr: 194.44.1.1
+        variable_sip_network_ip: 10.10.10.107
+        variable_sip_network_port: 5062
+        variable_sip_received_ip: 10.10.10.107
+        variable_sip_received_port: 5062
+        variable_sip_via_protocol: udp
+        variable_sip_authorized: true
+        variable_Event-Name: REQUEST_PARAMS
+        variable_Core-UUID: 78e8c87b-5648-47af-b339-3a3e9a31d55f
+        variable_FreeSWITCH-Hostname: pre.webitel.com
+        variable_FreeSWITCH-Switchname: webitel
+        variable_FreeSWITCH-IPv4: 194.44.1.1
+        variable_FreeSWITCH-IPv6: 2a00:fc00::1
+        variable_Event-Date-Local: 2016-07-15 08:56:01
+        variable_Event-Date-GMT: Fri, 15 Jul 2016 08:56:01 GMT
+        variable_Event-Date-Timestamp: 1468572961407256
+        variable_Event-Calling-File: sofia.c
+        variable_Event-Calling-Function: sofia_handle_sip_i_invite
+        variable_Event-Calling-Line-Number: 9670
+        variable_Event-Sequence: 334498
+        variable_sip_number_alias: 9999
+        variable_sip_auth_username: 9999
+        variable_sip_auth_realm: demo.webitel.com
+        variable_number_alias: 9999
+        variable_requested_user_name: 9999
+        variable_requested_domain_name: demo.webitel.com
+        variable_customer_id: igor
+        variable_default_language: en
+        variable_kk: kk
+        variable_dsdada: das
+        variable_w_domain: demo.webitel.com
+        variable_user_scheme: account
+        variable_user_context: default
+        variable_effective_caller_id_name: 9999
+        variable_outbound_caller_id_name: 9999
+        variable_account_role: user
+        variable_skills: 1,2,3,4,5,6,7
+        variable_account_state: onhook
+        variable_account_status: none
+        variable_user_name: 9999
+        variable_sip_from_user_stripped: 9999
+        variable_sip_from_tag: 3102318183
+        variable_sofia_profile_name: internal
+        variable_recovery_profile_name: internal
+        variable_sip_full_via: SIP/2.0/UDP 10.10.10.107:5062;branch=z9hG4bK1537080004
+        variable_sip_from_display: Igor
+        variable_sip_full_from: "Igor" <sip:9999@demo.webitel.com:5070>;tag=3102318183
+        variable_sip_full_to: <sip:100@demo.webitel.com:5070>
+        variable_sip_req_user: 100
+        variable_sip_req_port: 5070
+        variable_sip_req_uri: 100@demo.webitel.com:5070
+        variable_sip_req_host: demo.webitel.com
+        variable_sip_to_user: 100
+        variable_sip_to_port: 5070
+        variable_sip_to_uri: 100@demo.webitel.com:5070
+        variable_sip_to_host: demo.webitel.com
+        variable_sip_contact_user: 9999
+        variable_sip_contact_port: 5062
+        variable_sip_contact_uri: 9999@10.10.10.107:5062
+        variable_sip_contact_host: 10.10.10.107
+        variable_sip_user_agent: Yealink SIP-T26P 6.73.0.50
+        variable_sip_via_host: 10.10.10.107
+        variable_sip_via_port: 5062
+        variable_max_forwards: 70
+        variable_presence_id: 9999@demo.webitel.com
+        variable_switch_r_sdp: v=0
+        o=- 20105 20105 IN IP4 10.10.10.107
+        s=SDP data
+        c=IN IP4 10.10.10.107
+        t=0 0
+        m=audio 11790 RTP/AVP 0 8 18 9 101
+        a=rtpmap:0 PCMU/8000
+        a=rtpmap:8 PCMA/8000
+        a=rtpmap:18 G729/8000
+        a=fmtp:18 annexb=no
+        a=rtpmap:9 G722/8000
+        a=rtpmap:101 telephone-event/8000
+        a=fmtp:101 0-15
+        a=ptime:20
+
+        variable_audio_media_flow: sendrecv
+        variable_rtp_use_codec_string: OPUS,G722,PCMA,PCMU,GSM,G729,ilbc,VP8,VP9,H264,H263,H263-1998
+        variable_rtp_audio_recv_pt: 0
+        variable_rtp_use_codec_name: PCMU
+        variable_rtp_use_codec_rate: 8000
+        variable_rtp_use_codec_ptime: 20
+        variable_rtp_use_codec_channels: 1
+        variable_rtp_last_audio_codec_string: PCMU@8000h@20i@1c
+        variable_original_read_codec: PCMU
+        variable_original_read_rate: 8000
+        variable_write_codec: PCMU
+        variable_write_rate: 8000
+        variable_dtmf_type: rfc2833
+        variable_domain_name: demo.webitel.com
+        variable_call_uuid: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9
+        variable_socket_host: 10.10.10.25
+        variable_sound_prefix: //sounds/en/us/callie
+        variable_webitel_direction: internal
+        variable_dialed_extension: 100
+        variable_export_vars: dialed_extension
+        variable_eavesdrop_group: demo.webitel.com
+        variable_presence_data: demo.webitel.com
+        variable_ringback: %(2000,4000,440,480)
+        variable_transfer_ringback: %(400,200,400,450);%(400,2000,400,450)
+        variable_hangup_after_bridge: true
+        variable_continue_on_fail: true
+        variable_webitel_record_file_name: 9c7e3d82-3c0d-4259-ad37-e534003f9ad9_recordSession.mp3
+        variable_RECORD_MIN_SEC: 2
+        variable_RECORD_STEREO: true
+        variable_RECORD_BRIDGE_REQ: true
+        variable_recording_follow_transfer: true
+        variable_record_post_process_exec_api: luarun:RecordUpload.lua 9c7e3d82-3c0d-4259-ad37-e534003f9ad9 demo.webitel.com mp3 none recordSession
+        variable_local_media_ip: 194.44.1.1
+        variable_local_media_port: 19340
+        variable_advertised_media_ip: 194.44.1.1
+        variable_rtp_use_timer_name: soft
+        variable_rtp_use_pt: 0
+        variable_rtp_use_ssrc: 730683089
+        variable_rtp_2833_send_payload: 101
+        variable_rtp_2833_recv_payload: 101
+        variable_remote_media_ip: 10.10.10.107
+        variable_remote_media_port: 11790
+        variable_current_loop: 1
+        variable_total_loops: 1
+        variable_current_application_data: {domain_name=demo.webitel.com}user/100@demo.webitel.com
+        variable_current_application: bridge
+        variable_dialed_user: 100
+        variable_dialed_domain: demo.webitel.com
+        variable_originated_legs: ARRAY::88e739f2-0984-4c2c-af9d-7e8fe9a8398f;Outbound Call;100|:88e739f2-0984-4c2c-af9d-7e8fe9a8398f;Outbound Call;100
+        variable_zrtp_secure_media_confirmed_audio: false
+        variable_switch_m_sdp: v=0
+        o=- 20132 20132 IN IP4 10.10.10.101
+        s=SDP data
+        c=IN IP4 10.10.10.101
+        t=0 0
+        m=audio 11786 RTP/AVP 9 108
+        a=rtpmap:9 G722/8000
+        a=rtpmap:108 telephone-event/8000
+        a=fmtp:108 0-15
+        a=ptime:20
+        m=video 0 RTP/AVP 104 105 106 34 107
+        b=AS:1024
+
+        variable_read_codec: PCMU
+        variable_read_rate: 8000
+        variable_rtp_local_sdp_str: v=0
+        o=webitel 1468553621 1468553623 IN IP4 194.44.1.1
+        s=webitel
+        c=IN IP4 194.44.1.1
+        t=0 0
+        m=audio 19340 RTP/AVP 0 101
+        a=rtpmap:0 PCMU/8000
+        a=rtpmap:101 telephone-event/8000
+        a=fmtp:101 0-16
+        a=ptime:20
+        a=sendrecv
+
+        variable_endpoint_disposition: ANSWER
+        variable_originate_causes: ARRAY::88e739f2-0984-4c2c-af9d-7e8fe9a8398f;NONE|:88e739f2-0984-4c2c-af9d-7e8fe9a8398f;NONE
+        variable_originate_disposition: SUCCESS
+        variable_DIALSTATUS: SUCCESS
+        variable_signal_bond: 88e739f2-0984-4c2c-af9d-7e8fe9a8398f
+
+CHANNEL_UNBRIDGE
+++++++++++++++++
+
+A bridge has been terminated. The call itself will most probably be terminated since bridges exist during a call's lifespan.
+
+**Example**::
+
+        Event-Name: CHANNEL_UNBRIDGE
+        Core-UUID: 78e8c87b-5648-47af-b339-3a3e9a31d55f
+        FreeSWITCH-Hostname: pre.webitel.com
+        FreeSWITCH-Switchname: webitel
+        FreeSWITCH-IPv4: 194.44.1.1
+        FreeSWITCH-IPv6: 2a00:fc00::1
+        Event-Date-Local: 2016-07-15 08:58:10
+        Event-Date-GMT: Fri, 15 Jul 2016 08:58:10 GMT
+        Event-Date-Timestamp: 1468573090467299
+        Event-Calling-File: switch_ivr_bridge.c
+        Event-Calling-Function: switch_ivr_multi_threaded_bridge
+        Event-Calling-Line-Number: 1686
+        Event-Sequence: 334787
+        Bridge-A-Unique-ID: d3463081-212b-4d54-b93d-63720cc9d665
+        Bridge-B-Unique-ID: 1f4a8f90-d9b9-4699-a645-eb562d98b627
+        Channel-State: CS_EXECUTE
+        Channel-Call-State: ACTIVE
+        Channel-State-Number: 4
+        Channel-Name: sofia/internal/9999@demo.webitel.com:5070
+        Unique-ID: d3463081-212b-4d54-b93d-63720cc9d665
+        Call-Direction: inbound
+        Presence-Call-Direction: inbound
+        Channel-HIT-Dialplan: true
+        Channel-Presence-ID: 9999@demo.webitel.com
+        Channel-Presence-Data: demo.webitel.com
+        Channel-Call-UUID: d3463081-212b-4d54-b93d-63720cc9d665
+        Answer-State: answered
+        Channel-Read-Codec-Name: PCMU
+        Channel-Read-Codec-Rate: 8000
+        Channel-Read-Codec-Bit-Rate: 64000
+        Channel-Write-Codec-Name: PCMU
+        Channel-Write-Codec-Rate: 8000
+        Channel-Write-Codec-Bit-Rate: 64000
+        Caller-Direction: inbound
+        Caller-Logical-Direction: inbound
+        Caller-Username: 9999
+        Caller-Dialplan: XML
+        Caller-Caller-ID-Name: Igor
+        Caller-Caller-ID-Number: 9999
+        Caller-Orig-Caller-ID-Name: Igor
+        Caller-Orig-Caller-ID-Number: 9999
+        Caller-Callee-ID-Name: Outbound Call
+        Caller-Callee-ID-Number: 100
+        Caller-Network-Addr: 10.10.10.107
+        Caller-ANI: 9999
+        Caller-Destination-Number: 100
+        Caller-Unique-ID: d3463081-212b-4d54-b93d-63720cc9d665
+        Caller-Source: mod_sofia
+        Caller-Context: default
+        Caller-Channel-Name: sofia/internal/9999@demo.webitel.com:5070
+        Caller-Profile-Index: 1
+        Caller-Profile-Created-Time: 1468573055707186
+        Caller-Channel-Created-Time: 1468573055707186
+        Caller-Channel-Answered-Time: 1468573057947208
+        Caller-Channel-Progress-Time: 1468573055947205
+        Caller-Channel-Progress-Media-Time: 1468573055767208
+        Caller-Channel-Hangup-Time: 0
+        Caller-Channel-Transfer-Time: 0
+        Caller-Channel-Resurrect-Time: 0
+        Caller-Channel-Bridged-Time: 1468573057947208
+        Caller-Channel-Last-Hold: 0
+        Caller-Channel-Hold-Accum: 0
+        Caller-Screen-Bit: true
+        Caller-Privacy-Hide-Name: false
+        Caller-Privacy-Hide-Number: false
+        Other-Type: originatee
+        Other-Leg-Direction: outbound
+        Other-Leg-Logical-Direction: inbound
+        Other-Leg-Username: 9999
+        Other-Leg-Dialplan: XML
+        Other-Leg-Caller-ID-Name: 9999
+        Other-Leg-Caller-ID-Number: 9999
+        Other-Leg-Orig-Caller-ID-Name: Igor
+        Other-Leg-Orig-Caller-ID-Number: 9999
+        Other-Leg-Callee-ID-Name: Outbound Call
+        Other-Leg-Callee-ID-Number: 100
+        Other-Leg-Network-Addr: 10.10.10.101
+        Other-Leg-ANI: 9999
+        Other-Leg-Destination-Number: 100
+        Other-Leg-Unique-ID: 1f4a8f90-d9b9-4699-a645-eb562d98b627
+        Other-Leg-Source: mod_sofia
+        Other-Leg-Context: default
+        Other-Leg-Channel-Name: sofia/internal/100@10.10.10.101:5064
+        Other-Leg-Profile-Created-Time: 1468573055787199
+        Other-Leg-Channel-Created-Time: 1468573055787199
+        Other-Leg-Channel-Answered-Time: 1468573057907238
+        Other-Leg-Channel-Progress-Time: 1468573055947205
+        Other-Leg-Channel-Progress-Media-Time: 0
+        Other-Leg-Channel-Hangup-Time: 0
+        Other-Leg-Channel-Transfer-Time: 0
+        Other-Leg-Channel-Resurrect-Time: 0
+        Other-Leg-Channel-Bridged-Time: 0
+        Other-Leg-Channel-Last-Hold: 0
+        Other-Leg-Channel-Hold-Accum: 0
+        Other-Leg-Screen-Bit: true
+        Other-Leg-Privacy-Hide-Name: false
+        Other-Leg-Privacy-Hide-Number: false
+        variable_direction: inbound
+        variable_uuid: d3463081-212b-4d54-b93d-63720cc9d665
+        variable_session_id: 263
+        variable_sip_from_user: 9999
+        variable_sip_from_port: 5070
+        variable_sip_from_uri: 9999@demo.webitel.com:5070
+        variable_sip_from_host: demo.webitel.com
+        variable_video_media_flow: sendrecv
+        variable_channel_name: sofia/internal/9999@demo.webitel.com:5070
+        variable_ep_codec_string: CORE_PCM_MODULE.PCMU@8000h@20i@64000b,CORE_PCM_MODULE.PCMA@8000h@20i@64000b,mod_bcg729.G729@8000h@20i@8000b,mod_spandsp.G722@8000h@20i@64000b
+        variable_sip_local_network_addr: 194.44.1.1
+        variable_sip_network_ip: 10.10.10.107
+        variable_sip_network_port: 5062
+        variable_sip_received_ip: 10.10.10.107
+        variable_sip_received_port: 5062
+        variable_sip_via_protocol: udp
+        variable_sip_authorized: true
+        variable_Event-Name: REQUEST_PARAMS
+        variable_Core-UUID: 78e8c87b-5648-47af-b339-3a3e9a31d55f
+        variable_FreeSWITCH-Hostname: pre.webitel.com
+        variable_FreeSWITCH-Switchname: webitel
+        variable_FreeSWITCH-IPv4: 194.44.1.1
+        variable_FreeSWITCH-IPv6: 2a00:fc00::1
+        variable_Event-Date-Local: 2016-07-15 08:57:35
+        variable_Event-Date-GMT: Fri, 15 Jul 2016 08:57:35 GMT
+        variable_Event-Date-Timestamp: 1468573055707186
+        variable_Event-Calling-File: sofia.c
+        variable_Event-Calling-Function: sofia_handle_sip_i_invite
+        variable_Event-Calling-Line-Number: 9670
+        variable_Event-Sequence: 334672
+        variable_sip_number_alias: 9999
+        variable_sip_auth_username: 9999
+        variable_sip_auth_realm: demo.webitel.com
+        variable_number_alias: 9999
+        variable_requested_user_name: 9999
+        variable_requested_domain_name: demo.webitel.com
+        variable_customer_id: igor
+        variable_default_language: en
+        variable_kk: kk
+        variable_dsdada: das
+        variable_w_domain: demo.webitel.com
+        variable_user_scheme: account
+        variable_user_context: default
+        variable_effective_caller_id_name: 9999
+        variable_outbound_caller_id_name: 9999
+        variable_account_role: user
+        variable_skills: 1,2,3,4,5,6,7
+        variable_account_state: onhook
+        variable_account_status: none
+        variable_user_name: 9999
+        variable_sip_from_user_stripped: 9999
+        variable_sofia_profile_name: internal
+        variable_recovery_profile_name: internal
+        variable_sip_req_user: 100
+        variable_sip_req_port: 5070
+        variable_sip_req_uri: 100@demo.webitel.com:5070
+        variable_sip_req_host: demo.webitel.com
+        variable_sip_to_user: 100
+        variable_sip_to_port: 5070
+        variable_sip_to_uri: 100@demo.webitel.com:5070
+        variable_sip_to_host: demo.webitel.com
+        variable_sip_contact_user: 9999
+        variable_sip_contact_port: 5062
+        variable_sip_contact_uri: 9999@10.10.10.107:5062
+        variable_sip_contact_host: 10.10.10.107
+        variable_sip_user_agent: Yealink SIP-T26P 6.73.0.50
+        variable_sip_via_host: 10.10.10.107
+        variable_sip_via_port: 5062
+        variable_max_forwards: 70
+        variable_presence_id: 9999@demo.webitel.com
+        variable_audio_media_flow: sendrecv
+        variable_rtp_use_codec_string: OPUS,G722,PCMA,PCMU,GSM,G729,ilbc,VP8,VP9,H264,H263,H263-1998
+        variable_rtp_use_codec_name: PCMU
+        variable_rtp_use_codec_rate: 8000
+        variable_rtp_use_codec_ptime: 20
+        variable_rtp_use_codec_channels: 1
+        variable_rtp_last_audio_codec_string: PCMU@8000h@20i@1c
+        variable_original_read_codec: PCMU
+        variable_original_read_rate: 8000
+        variable_write_codec: PCMU
+        variable_write_rate: 8000
+        variable_domain_name: demo.webitel.com
+        variable_call_uuid: d3463081-212b-4d54-b93d-63720cc9d665
+        variable_socket_host: 10.10.10.25
+        variable_sound_prefix: //sounds/en/us/callie
+        variable_webitel_direction: internal
+        variable_dialed_extension: 100
+        variable_export_vars: dialed_extension
+        variable_eavesdrop_group: demo.webitel.com
+        variable_presence_data: demo.webitel.com
+        variable_ringback: %(2000,4000,440,480)
+        variable_transfer_ringback: %(400,200,400,450);%(400,2000,400,450)
+        variable_hangup_after_bridge: true
+        variable_continue_on_fail: true
+        variable_webitel_record_file_name: d3463081-212b-4d54-b93d-63720cc9d665_recordSession.mp3
+        variable_RECORD_MIN_SEC: 2
+        variable_RECORD_STEREO: true
+        variable_RECORD_BRIDGE_REQ: true
+        variable_recording_follow_transfer: true
+        variable_record_post_process_exec_api: luarun:RecordUpload.lua d3463081-212b-4d54-b93d-63720cc9d665 demo.webitel.com mp3 none recordSession
+        variable_local_media_ip: 194.44.1.1
+        variable_local_media_port: 19500
+        variable_advertised_media_ip: 194.44.1.1
+        variable_rtp_use_timer_name: soft
+        variable_rtp_use_pt: 0
+        variable_rtp_use_ssrc: 730683183
+        variable_current_loop: 1
+        variable_total_loops: 1
+        variable_current_application_data: {domain_name=demo.webitel.com}user/100@demo.webitel.com
+        variable_current_application: bridge
+        variable_dialed_user: 100
+        variable_dialed_domain: demo.webitel.com
+        variable_originated_legs: ARRAY::1f4a8f90-d9b9-4699-a645-eb562d98b627;Outbound Call;100|:1f4a8f90-d9b9-4699-a645-eb562d98b627;Outbound Call;100
+        variable_read_codec: PCMU
+        variable_read_rate: 8000
+        variable_endpoint_disposition: ANSWER
+        variable_originate_causes: ARRAY::1f4a8f90-d9b9-4699-a645-eb562d98b627;NONE|:1f4a8f90-d9b9-4699-a645-eb562d98b627;NONE
+        variable_originate_disposition: SUCCESS
+        variable_DIALSTATUS: SUCCESS
+        variable_last_bridge_to: 1f4a8f90-d9b9-4699-a645-eb562d98b627
+        variable_bridge_channel: sofia/internal/100@10.10.10.101:5064
+        variable_bridge_uuid: 1f4a8f90-d9b9-4699-a645-eb562d98b627
+        variable_signal_bond: 1f4a8f90-d9b9-4699-a645-eb562d98b627
+        variable_sip_to_tag: FF2vX9yD4947S
+        variable_sip_from_tag: 3298371467
+        variable_sip_cseq: 2
+        variable_sip_call_id: 544689405@10.10.10.107
+        variable_sip_full_via: SIP/2.0/UDP 10.10.10.107:5062;branch=z9hG4bK3871199108
+        variable_sip_from_display: Igor
+        variable_sip_full_from: "Igor" <sip:9999@demo.webitel.com:5070>;tag=3298371467
+        variable_sip_full_to: <sip:100@demo.webitel.com:5070>;tag=FF2vX9yD4947S
+        variable_last_sent_callee_id_name: Outbound Call
+        variable_last_sent_callee_id_number: 100
+        variable_switch_r_sdp: v=0
+        o=- 20106 20107 IN IP4 10.10.10.107
+        s=SDP data
+        c=IN IP4 10.10.10.107
+        t=0 0
+        a=sendrecv
+        m=audio 11792 RTP/AVP 0 101
+        a=rtpmap:0 PCMU/8000
+        a=rtpmap:101 telephone-event/8000
+        a=fmtp:101 0-15
+        a=ptime:20
+
+        variable_remote_media_ip: 10.10.10.107
+        variable_remote_media_port: 11792
+        variable_rtp_audio_recv_pt: 0
+        variable_dtmf_type: rfc2833
+        variable_rtp_2833_send_payload: 101
+        variable_rtp_2833_recv_payload: 101
+        variable_rtp_local_sdp_str: v=0
+        o=webitel 1468553555 1468553558 IN IP4 194.44.1.1
+        s=webitel
+        c=IN IP4 194.44.1.1
+        t=0 0
+        m=audio 19500 RTP/AVP 0 101
+        a=rtpmap:0 PCMU/8000
+        a=rtpmap:101 telephone-event/8000
+        a=fmtp:101 0-16
+        a=ptime:20
+        a=sendrecv
+
+        variable_switch_m_sdp: v=0
+        o=- 20133 20134 IN IP4 10.10.10.101
+        s=SDP data
+        c=IN IP4 10.10.10.101
+        t=0 0
+        m=audio 11790 RTP/AVP 9 101
+        a=rtpmap:9 G722/8000
+        a=rtpmap:101 telephone-event/8000
+        a=fmtp:101 0-15
+        a=ptime:20
+        m=video 0 RTP/AVP 104
+
+        variable_zrtp_secure_media_confirmed_audio: false
+        variable_sip_hangup_phrase: OK
+        variable_last_bridge_hangup_cause: NORMAL_CLEARING
+        variable_last_bridge_proto_specific_hangup_cause: sip:200
+        variable_bridge_hangup_cause: NORMAL_CLEARING
