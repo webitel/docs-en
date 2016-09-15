@@ -949,6 +949,46 @@ fn
 
 `JavaScript String <http://www.w3schools.com/js/js_string_methods.asp>`_
 
+tts
+---
+
+.. py:module:: tts
+
+Text-To-Speech.
+
+.. code-block:: json
+
+    [{
+		"tts": {
+			"provider": "ivona",
+			"voice": {
+				"name": "Maxim",
+				"language": "ru-RU",
+				"gender": "Male"
+			},
+			"accessKey": "GHYYHNIJ899MNAIUQ",
+			"accessToken": "ddT8riLuehYheuu81x2AiaToJJUHByehbbHWYRnWGk",
+			"text": "Нажми 1 и я скажу что думаю о майкрософт",
+			"getDigits": {
+				"setVar": "pressed_button",
+				"tries": 2
+			}
+		}
+	},
+	{
+        "tts": {
+            "provider": "microsoft",
+            "voice": {
+                "language": "en-US",
+                "gender": "Male"
+            },
+            "accessKey1": "cf62f933JndjjMjdd3aa99cc9fd36f87",
+            "accessKey2": "6772cff3f3skiHsd91dfc3961c987309",
+            "appId": "88058b7b28a3juk3190f53efe29cff17",
+	        "text": "microsoft is ..."
+        }
+	}]
+
 Variables
 ---------
 
