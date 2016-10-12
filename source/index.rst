@@ -17,6 +17,7 @@ RESTful HTTP API v2
    restful-http-api-accounts
    restful-http-api-callflow
    restful-http-api-channels
+   restful-http-api-blacklists
    restful-http-api-email
    restful-http-api-misc
 
