@@ -89,13 +89,13 @@ Get numbers by blacklist name
 Add number into the blaklist
 ++++++++++++++++++++++++++++
 
-.. http:post:: /api/v2/blacklists/(blacklist_name)?domain=(domain_name) 
+.. http:post:: /api/v2/routes/blacklists/(blacklist_name)?domain=(domain_name) 
 
    **Example request**:
 
    .. sourcecode:: http
 
-      POST /api/v2/blacklists/my_list2?domain=my.webitel.com HTTP/1.1
+      POST /api/v2/routes/blacklists/my_list2?domain=my.webitel.com HTTP/1.1
       Content-Type: application/json
       X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDIxNzkzNTh9.pKXWfzXqbp8FMbOKocNaSlT1bYq4Xqzol-0kEXOY0_s
       X-Key: 8fd26a17-eb28-4c74-aa6f-a3794f4f466c
