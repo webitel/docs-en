@@ -84,12 +84,13 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
         "bridge": {
             "strategy": "multiple",
             "pickup": "mygroup",
+            "codecs": ["G729", "PCMA"]
             "parameters": ["instant_ringback=true"],
             "endpoints": [{
                 "name": "gw_name1",
                 "type": "sipGateway",
                 "dialString": "&reg0.$1",
-                "parameters": ["absolute_codec_string='PCMA,G729'"]
+                "parameters": ["leg_timeout=15"]
               },
               {
                 "name": "1000",
@@ -106,7 +107,7 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
                 "profile": "nonreg",
                 "host": "wbtl.pstn.twilio.com",
                 "dialString": "+1&reg0.$1",
-                "parameters": ["absolute_codec_string=PCMU"]
+                "parameters": ["origination_caller_id_number=911"]
               }]
         }
     }
@@ -157,8 +158,6 @@ parameters
 |                                            | Can be used inside endpoints parameters only.                                       |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``origination_caller_id_number=911``       | Sets the origination CallerID number.                                               |
-+--------------------------------------------+-------------------------------------------------------------------------------------+
-| ``absolute_codec_string='PCMA,PCMU'``      | Sets the absolute codec string to use (nothing will be appended).                   |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``sip_renegotiate_codec_on_reinvite=true`` | Allow SDP codec change with re-INVITE.                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
