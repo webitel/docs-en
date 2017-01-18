@@ -12,7 +12,7 @@ Modify agent status.
 
 .. code-block:: json
 
-   {  
+   { 
       "agent":  {
           "name": "1000",
           "status": "Available",
@@ -36,19 +36,16 @@ Answering machine detection (voice activity detection).
 .. code-block:: json
 
    {
-       "amd": ""
-   },
-   {
-       "amd": {
-            "maximumWordLength": 5000, 
-            "maximumNumberOfWords": 3, 
-            "betweenWordsSilence": 50, 
-            "minWordLength": 100,
-            "totalAnalysisTime": 5000, 
-            "silenceThreshold": 256, 
-            "afterGreetingSilence": 800, 
-            "greeting": 1500,
-            "initialSilence": 2500
+     "amd":  {
+        "maximumWordLength": 5000, 
+        "maximumNumberOfWords": 3, 
+        "betweenWordsSilence": 50,
+         "minWordLength": 100,
+        "totalAnalysisTime": 5000, 
+        "silenceThreshold": 256, 
+        "afterGreetingSilence": 800, 
+        "greeting": 1500,
+        "initialSilence": 2500
         }
    }
 
