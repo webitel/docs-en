@@ -26,6 +26,36 @@ Modify agent status.
 | state  |  Waiting or Idle.                                          |
 +--------+------------------------------------------------------------+
 
+amd
+---
+
+.. py:module:: amd
+
+Answering machine detection (voice activity detection).
+
+.. code-block:: json
+
+   {
+       "amd": ""
+   }
+
+After the AMD execution, the variable **amd_result** and **amd_cause** will be set.
+
+The variable **amd_result** will return one of the following results:
+
+- NOTSURE: take this value if total_analysis_time is over and decision could not be made
+- HUMAN: if a human is detected
+- MACHINE: if a human is detected
+
+The variable **amd_cause** will return one of the following results:
+
+- INITIALSILENCE (MACHINE)
+- SILENCEAFTERGREETING (HUMAN)
+- MAXWORDLENGTH (MACHINE)
+- MAXWORDS (MACHINE)
+- LONGGREETING (MACHINE)
+- TOOLONG (NOTSURE)
+
 answer
 ------
 
