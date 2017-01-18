@@ -84,7 +84,7 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
         "bridge": {
             "strategy": "multiple",
             "pickup": "mygroup",
-            "codecs": ["G729", "PCMA"]
+            "codecs": ["G729", "PCMA"],
             "parameters": ["instant_ringback=true"],
             "endpoints": [{
                 "name": "gw_name1",
