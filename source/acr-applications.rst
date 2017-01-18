@@ -37,7 +37,42 @@ Answering machine detection (voice activity detection).
 
    {
        "amd": ""
+   },
+   {
+       "amd": {
+            "maximumWordLength": 5000, 
+            "maximumNumberOfWords": 3, 
+            "betweenWordsSilence": 50, 
+            "minWordLength": 100,
+            "totalAnalysisTime": 5000, 
+            "silenceThreshold": 256, 
+            "afterGreetingSilence": 800, 
+            "greeting": 1500,
+            "initialSilence": 2500
+        }
    }
+
++----------------------+------------------------------------------------------------+
+| maximumWordLength    | Maximum duration of a single Voice utterance allowed       |
++----------------------+------------------------------------------------------------+
+| maximumNumberOfWords | Maximum number of words in the greeting.                   |
+|                      | If exceeded then MACHINE                                   |
++----------------------+------------------------------------------------------------+
+| betweenWordsSilence  | Minimum duration of silence after a word to consider       |
+|                      | the audio what follows as a new word                       |
++----------------------+------------------------------------------------------------+
+| minWordLength        | Minimum duration of Voice to considered as a word          |
++----------------------+------------------------------------------------------------+
+| totalAnalysisTime    | Maximum time allowed for the algorithm to decide           |
+|                      | on a HUMAN or MACHINE                                      |
++----------------------+------------------------------------------------------------+
+| afterGreetingSilence | Silence after detecting a greeting. If exceeded then HUMAN |
++----------------------+------------------------------------------------------------+
+| greeting             | Maximum length of a greeting. If exceeded then MACHINE.    |
++----------------------+------------------------------------------------------------+
+| initialSilence       | Maximum silence duration before the greeting.              |
+|                      | If exceeded then MACHINE.                                  |
++----------------------+------------------------------------------------------------+
 
 After the AMD execution, the variable **amd_result** and **amd_cause** will be set.
 
