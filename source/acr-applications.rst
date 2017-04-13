@@ -1012,6 +1012,25 @@ fn
 
 `JavaScript String <http://www.w3schools.com/js/js_string_methods.asp>`_
 
+stt
+---
+
+.. py:module:: stt
+
+Speech-To-Text.
+
+.. code-block:: json
+
+    [{
+		"stt": {
+			"lang": "uk-UA",
+			"maxSec": 15,
+			"silenceThresh": 200,
+			"silenceHits": 3,
+			"setVar": "myTextVar"
+		}
+	}]
+
 tts
 ---
 
@@ -1023,33 +1042,37 @@ Text-To-Speech.
 
     [{
 		"tts": {
-			"provider": "ivona",
+			"povider": "ivona",
+			"accessKey": "GDNAJZAEAHHYUYGSTOZA",
+			"accessToken": "c1j5QSPx63hFs6#wtwMojSZiQ9QO+3v",
 			"voice": {
-				"name": "Maxim",
-				"language": "ru-RU",
-				"gender": "Male"
+				"name": "Salli",
+				"language": "en-US",
+				"gender": "Female"
 			},
-			"accessKey": "GHYYHNIJ899MNAIUQ",
-			"accessToken": "ddT8riLuehYheuu81x2AiaToJJUHByehbbHWYRnWGk",
-			"text": "Нажми 1 и я скажу что думаю о майкрософт",
-			"getDigits": {
-				"setVar": "pressed_button",
-				"tries": 2
-			}
+			"text": "Hi, my name is Salli!"
 		}
 	},
 	{
-        "tts": {
-            "provider": "microsoft",
-            "voice": {
-                "language": "en-US",
-                "gender": "Male"
-            },
-            "accessKey1": "cf62f933JndjjMjdd3aa99cc9fd36f87",
-            "accessKey2": "6772cff3f3skiHsd91dfc3961c987309",
-            "appId": "88058b7b28a3juk3190f53efe29cff17",
-	        "text": "microsoft is ..."
-        }
+		"tts": {
+			"povider": "polly",
+			"accessKey": "GDNYEHJWNNYYWBJNOZA",
+			"accessToken": "c1j5QSPx9H63jmwtwMojSZiQ9QeO+3v",
+			"voice": "Maxim",
+			"text": "Hi, my name is Maxim!"
+		}
+	},
+	{
+		"tts": {
+			"provider": "microsoft",
+			"accessKey": "cf62f9392773hyyhjkk3aa99cc9fd36f87",
+			"accessToken": "6772cff3f8d740fd91d345dsfj987309",
+			"voice": {
+				"language": "ru-RU",
+				"gender": "Male"
+			},
+			"text": "Привет, меня зовут Егор!"
+		}
 	}]
 
 Variables
