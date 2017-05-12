@@ -1208,3 +1208,20 @@ check a voicemail message
 +-----------------------+------------------------------------------------------------------------+
 | ``auth``              | Will prompt for PIN if is set to the **true**.                         |
 +-----------------------+------------------------------------------------------------------------+
+
+userData
+--------
+
+.. py:module:: userData
+
+Retrieves user variables as defined in the directory.
+
+.. code-block:: json
+
+    {
+		"userData": {
+			"name": "102",
+			"var": "account_state",
+			"setVar": "acc_state"
+		}
+	}
