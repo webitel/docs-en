@@ -974,7 +974,7 @@ String application help you to work with strings.
             "data": "${destination_number}",
             "setVar": "myVar",
             "fn": "slice",
-            "args": -3
+            "args": [ -3 ]
         }
      },
      {
