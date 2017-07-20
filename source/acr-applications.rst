@@ -152,17 +152,18 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
                 "name": "gw_name1",
                 "type": "sipGateway",
                 "dialString": "&reg0.$1",
-                "parameters": ["leg_timeout=15"]
+                "parameters": ["sip_invite_params=user=phone"]
               },
               {
                 "name": "1000",
-                "type": "device"
+                "type": "device",
+                "parameters": ["leg_timeout=15"]
               },
               {
                 "name": "1001",
                 "type": "user",
                 "domainName": "10.10.10.144",
-                "parameters": ["d=3"]
+                "parameters": ["leg_delay_start=15"]
               },
               {
                 "type": "sipUri",
