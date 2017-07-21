@@ -177,6 +177,26 @@ Webitel user status was changed.
         Event-Calling-Line-Number: 2256
         Event-Sequence: 332966
 
+engine::dialer_member_end
++++++++++++++++++++++++++
+
+Dialer's member was complited
+
+**Example**::
+
+        Event-Subclass: engine::dialer_member_end
+        Event-Name: CUSTOM
+        Event-Domain: demo.webitel.com
+	variable_dialerId: 5971aea9a7775e000b8ec987
+	variable_dialerName: TEST Dialer
+	variable_id: 5971aeb9a7775e000b8ec98e
+	variable_name: Customer 1
+	variable_currentNumber: +380443322112
+	variable_dlr_member_number_description:
+	variable_currentProbe: 2
+	variable_session: 3feacad5-2245-4a6d-a4e3-46af6a17a70b
+        variable_endCause: MAX_TRY_COUNT
+
 DTMF
 ++++
 
