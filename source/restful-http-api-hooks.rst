@@ -87,7 +87,7 @@ Create a hook
                 "url": "https://requestb.in/yoe4hwyo"
             },
             "customBody": true,
-            "rawBody": "{ \"dlr_id\": \"${dlr_id}\", \"member_id\": \"${member_id}\", \"end_cause\": \"${endCause}\" }",
+            "rawBody": "{ \"dlr_id\": \"${dialerId}\", \"member_id\": \"${id}\", \"end_cause\": \"${endCause}\" }",
             "auth": {
                 "headers": {},
                 "map": {},
@@ -105,7 +105,7 @@ Create a hook
 
    .. sourcecode:: json
 
-       {"status":"OK","data":{"result":{"ok":1,"n":1},"ops":[{"domain":"demo.webitel.com","event":"CUSTOM->engine::dialer_member_end","enable":true,"description":"dialer finished member","action":{"type":"web","method":"POST","url":"https://requestb.in/yoe4hwyo"},"fields":[],"map":{},"filter":{},"headers":{"Content-Type":"application/json"},"auth":{"headers":{},"map":{},"enabled":false},"customBody":true,"rawBody":"{\n\"dlr_id\": \"${dlr_id}\",\n\"member_id\": \"${member_id}\",\n\"end_cause\": \"${endCause}\"\n}","_id":"598035b7a7ec15000c40926e"}],"insertedCount":1,"insertedIds":["598035b7a7ec15000c40926e"]}}
+       {"status":"OK","data":{"result":{"ok":1,"n":1},"ops":[{"domain":"demo.webitel.com","event":"CUSTOM->engine::dialer_member_end","enable":true,"description":"dialer finished member","action":{"type":"web","method":"POST","url":"https://requestb.in/yoe4hwyo"},"fields":[],"map":{},"filter":{},"headers":{"Content-Type":"application/json"},"auth":{"headers":{},"map":{},"enabled":false},"customBody":true,"rawBody":"{\n\"dlr_id\": \"${dialerId}\",\n\"member_id\": \"${id}\",\n\"end_cause\": \"${endCause}\"\n}","_id":"598035b7a7ec15000c40926e"}],"insertedCount":1,"insertedIds":["598035b7a7ec15000c40926e"]}}
 
    :reqheader Content-Type: `application/json`
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
