@@ -107,6 +107,7 @@ Create a hook
 
        {"status":"OK","data":{"result":{"ok":1,"n":1},"ops":[{"domain":"demo.webitel.com","event":"CUSTOM->engine::dialer_member_end","enable":true,"description":"dialer finished member","action":{"type":"web","method":"POST","url":"https://requestb.in/yoe4hwyo"},"fields":[],"map":{},"filter":{},"headers":{"Content-Type":"application/json"},"auth":{"headers":{},"map":{},"enabled":false},"customBody":true,"rawBody":"{\n\"dlr_id\": \"${dlr_id}\",\n\"member_id\": \"${member_id}\",\n\"end_cause\": \"${endCause}\"\n}","_id":"598035b7a7ec15000c40926e"}],"insertedCount":1,"insertedIds":["598035b7a7ec15000c40926e"]}}
 
+   :reqheader Content-Type: `application/json`
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :param string domain_name: Domain name is required
    :statuscode 200: No error

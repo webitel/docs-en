@@ -15,40 +15,38 @@ Webitel Status
 
    **Example response**:
 
-   .. sourcecode:: http
-
-      HTTP/1.1 200 OK
+   .. sourcecode:: json
 
       {
-        "Version": "3.3.0-sha1:73b7f480dcf48e52b87e4dad6af38550d6a3690e",
-        "Node memory": {
-          "rss": "58.4 MB",
-          "heapTotal": "35.8 MB",
-          "heapUsed": "28.6 MB"
+        "version": "master#261-sha1:4a6ad8b564724c60afb52fef48b6621330d4339f",
+        "nodeMemory": {
+          "rss": 66199552,
+          "heapTotal": 49872896,
+          "heapUsed": 42046536
         },
-        "Process ID": 11,
-        "Socket sessions": 200,
-        "Process up time": "144:34:32",
-        "OS": {
-          "Total memory": "7.7 GB",
-          "Free memory": "5.2 GB",
-          "Platform": "linux",
-          "Name": "Linux",
-          "Architecture": "x64"
+        "processId": 12,
+        "socketSessions": 9,
+        "userSessions": 6,
+        "maxUserSessions": 6,
+        "domainSessions": 4,
+        "processUpTimeSec": 69864.091,
+        "wConsole": {
+          "status": "Connected",
+          "apiQueue": 0,
+          "cmdQueue": 0,
+          "version": "3.2.0",
+          "sid": "29e1b260-d7da-11dd-829b-54a05079cad2\n"
         },
-        "Users session": 50,
-        "Max users session": 100,
-        "Domain session": 10,
-        "Webitel": {
-          "Status": "Connected",
-          "ApiQueue": 0,
-          "CmdQueue": 0,
-          "Version": "3.3.0",
-          "Sid": "00aa0000-0000-000a-0a00-aa0000000000\n"
+        "system": {
+          "totalMemory": 16731197440,
+          "freeMemory": 1578758144,
+          "platform": "linux",
+          "name": "Linux",
+          "architecture": "x64"
         },
-        "CRASH_WORKER_COUNT": "0",
-        "freeSWITCH": "UP 0 years, 0 days, 4 hours, 34 minutes, 30 seconds, 956 milliseconds, 139 microseconds\nFreeSWITCH (Version 1.6.8 git 99de0ad 2016-05-05 15:38:32Z 64bit) is ready\n11893 session(s) since startup\n10 session(s) - peak 20, last 5min 10 \n0 session(s) per Sec out of max 30, peak 37, last 5min 0 \n1000 session(s) max\nmin idle cpu 0.00/95.93\nCurrent Stack Size/Max 240K/240K\n",
-        "Node version": "v6.2.0"
+        "crashCount": "0",
+        "freeSWITCH": "UP 0 years, 0 days, 19 hours, 23 minutes, 56 seconds, 830 milliseconds, 520 microseconds\nFreeSWITCH (Version 1.6.19 git e61ee1a 2017-07-25 21:08:52Z 64bit) is ready\n7629 session(s) since startup\n5 session(s) - peak 124, last 5min 5 \n3 session(s) per Sec out of max 30, peak 54, last 5min 3 \n1000 session(s) max\nmin idle cpu 0.00/92.40\nCurrent Stack Size/Max 240K/240K\n",
+        "nodeVersion": "v8.2.1"
       }
 
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
