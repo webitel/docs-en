@@ -59,8 +59,8 @@ Getting hooks list
 
     curl -XGET -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImUyNjU2OWQ1LWJlMjYtNDg2Yy05ZDY1LWMwMGU2MWQ2OTNjNSIsImV4cCI6MTUwMTg4MDQwMDAwMCwiZCI6ImRlbW8ud2ViaXRlbC5jb20iLCJ0IjoiZG9tYWluIiwidiI6Mn0.nqUnTAi-L_VTxUYDoK8QqSYkclDST5PRMaRlBg8M3hQ' "https://pre.webitel.com/engine/api/v2/hooks?domain=demo.domain.com"
 
-Create new hook
-+++++++++++++++
+Create a hook
++++++++++++++
 
 .. http:post:: /api/v2/hooks
 
@@ -78,28 +78,24 @@ Create new hook
    .. sourcecode:: json
 
         {
-            "event": "CHANNEL_CREATE",
+            "event": "CUSTOM->engine::dialer_member_end",
             "enable": true,
-            "description": "",
+            "description": "dialer finished member",
             "action": {
                 "type": "web",
                 "method": "POST",
                 "url": "https://requestb.in/yoe4hwyo"
             },
-            "customBody": false,
-            "rawBody": "",
+            "customBody": true,
+            "rawBody": "{ \"dlr_id\": \"${dlr_id}\", \"member_id\": \"${member_id}\", \"end_cause\": \"${endCause}\" }",
             "auth": {
                 "headers": {},
                 "map": {},
                 "enabled": false
             },
-            "map": {
-                "Event-Name": "my_event"
-            },
+            "map": {},
             "filter": {},
-            "fields": [
-                "Event-Name"
-            ],
+            "fields": [],
             "headers": {
                 "Content-Type": "application/json"
             }
@@ -109,7 +105,7 @@ Create new hook
 
    .. sourcecode:: json
 
-       {"status":"OK","data":{"_id":"59802dc3a7ec15000c40926d","domain":"demo.webitel.com","event":"CHANNEL_CREATE","enable":true,"description":"","action":{"type":"web","method":"POST","url":"https://requestb.in/yoe4hwyo"},"fields":[],"map":{},"filter":{},"headers":{},"auth":{"headers":{},"map":{},"enabled":false},"customBody":true,"rawBody":"{}"}}
+       {"status":"OK","data":{"result":{"ok":1,"n":1},"ops":[{"domain":"demo.webitel.com","event":"CUSTOM->engine::dialer_member_end","enable":true,"description":"dialer finished member","action":{"type":"web","method":"POST","url":"https://requestb.in/yoe4hwyo"},"fields":[],"map":{},"filter":{},"headers":{"Content-Type":"application/json"},"auth":{"headers":{},"map":{},"enabled":false},"customBody":true,"rawBody":"{\n\"dlr_id\": \"${dlr_id}\",\n\"member_id\": \"${member_id}\",\n\"end_cause\": \"${endCause}\"\n}","_id":"598035b7a7ec15000c40926e"}],"insertedCount":1,"insertedIds":["598035b7a7ec15000c40926e"]}}
 
    :reqheader X-Key and X-Access-Token: :ref:`auth-token`
    :param string domain_name: Domain name is required
