@@ -40,7 +40,7 @@ Answering machine detection (voice activity detection).
         "maximumWordLength": 5000, 
         "maximumNumberOfWords": 3, 
         "betweenWordsSilence": 50,
-         "minWordLength": 100,
+        "minWordLength": 100,
         "totalAnalysisTime": 5000, 
         "silenceThreshold": 256, 
         "afterGreetingSilence": 800, 
@@ -781,7 +781,7 @@ Record to a file from the channel's input media stream.
 +--------------------+------------------------------------------------------------------------------------------+
 | ``name``           | Recorded file name.                                                                      |
 +--------------------+------------------------------------------------------------------------------------------+
-| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                                 |
+| ``type``           | File format: mp3 for an audio or mp4 for a video calls.                                  |
 +--------------------+------------------------------------------------------------------------------------------+
 | ``terminators``    | Will set # as recording session terminator.                                              |
 +--------------------+------------------------------------------------------------------------------------------+
@@ -816,7 +816,7 @@ Records an entire phone call or session.
 +--------------------+------------------------------------------------------------------------------------------+
 | ``action``         | start or stop record session.                                                            |
 +--------------------+------------------------------------------------------------------------------------------+
-| ``type``           | File format: mp3 for an audio or mp4 for an video calls.                                 |
+| ``type``           | File format: mp3 for an audio or mp4 for a video calls.                                  |
 +--------------------+------------------------------------------------------------------------------------------+
 | ``stereo``         | Record leg A and leg B streams (i.e. the caller is recorded to the left channel and the  |
 |                    | reciever is recorded on right channel) into different channel in a stereo file.          |
@@ -1042,19 +1042,6 @@ Text-To-Speech.
 .. code-block:: json
 
     [{
-		"tts": {
-			"povider": "ivona",
-			"accessKey": "GDNAJZAEAHHYUYGSTOZA",
-			"accessToken": "c1j5QSPx63hFs6#wtwMojSZiQ9QO+3v",
-			"voice": {
-				"name": "Salli",
-				"language": "en-US",
-				"gender": "Female"
-			},
-			"text": "Hi, my name is Salli!"
-		}
-	},
-	{
 		"tts": {
 			"povider": "polly",
 			"accessKey": "GDNYEHJWNNYYWBJNOZA",

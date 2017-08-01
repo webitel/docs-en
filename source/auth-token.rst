@@ -3,6 +3,8 @@
 Auth Token
 **********
 
+You can use static domain token or generate user token by login command.
+
 Create an auth token
 ++++++++++++++++++++
 
