@@ -20,11 +20,11 @@ Modify agent status.
       }
    }
 
-+--------+------------------------------------------------------------+
-| status |  Logged Out, Available, Available (On Demand) or On Break. |
-+--------+------------------------------------------------------------+
-| state  |  Waiting or Idle.                                          |
-+--------+------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------+
+| status |  Logged Out, Available, Available (On Demand) or On Break.                          |
++--------+-------------------------------------------------------------------------------------+
+| state  |  Waiting or Idle.                                                                   |
++--------+-------------------------------------------------------------------------------------+
 
 amd
 ---
@@ -101,15 +101,14 @@ Answers an incoming call or session.
        "answer": "200 OK"
    }
 
-+------------+-------------------------------------------------------------------------------------+
-| 200 OK     |  Session Description Protocol (SDP) message that is sent by an answerer in response |
-|            |  to an offer that is received from an offerer.                                      |
-+------------+-------------------------------------------------------------------------------------+
-| 183 Session| Establishes media (SDP) but does not answer. Is equivalent to a SIP status code     |
-| Progress   | 183 with SDP.                                                                       |
-+------------+-------------------------------------------------------------------------------------+
-| 180 Ringing|  Is equivalent to a SIP status code 180 Ringing without SDP.                        |
-+------------+-------------------------------------------------------------------------------------+
++----------------------+-------------------------------------------------------------------------------------------------+
+| 200 OK               |  Session Description Protocol (SDP) message that is sent by an answerer in response to an offer |
+|                      |  that is received from an offerer.                                                              |
++----------------------+-------------------------------------------------------------------------------------------------+
+| 183 Session Progress | Establishes media (SDP) but does not answer. Is equivalent to a SIP status code 183 with SDP.   |
++----------------------+-------------------------------------------------------------------------------------------------+
+| 180 Ringing          |  Is equivalent to a SIP status code 180 Ringing without SDP.                                    |
++----------------------+-------------------------------------------------------------------------------------------------+
 
 blackList
 ----------
@@ -870,7 +869,7 @@ Disable music on hold.
 shout
 +++++
 
-Can play remote stream. You can set internet radio as Your ringback tone, just set in the name: http://online-radioroks.tavrmedia.ua/RadioROKS_32
+Can play remote stream. You can set internet radio as Your ringback tone, just set URL as a value of the **name** field: http://online-radioroks.tavrmedia.ua/RadioROKS_32
 
 tone
 ++++
