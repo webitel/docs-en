@@ -197,7 +197,7 @@ Dialer's member was complited
 	variable_session: 3feacad5-2245-4a6d-a4e3-46af6a17a70b
         variable_endCause: MAX_TRY_COUNT
 
-CUSTOM->engine::callback_member_add
+engine::callback_member_add
 +++++++++++++++++++++++++++++++++++
 
 The member was added into callback queue.
@@ -217,7 +217,7 @@ The member was added into callback queue.
         done: false
         request_ip: "194.44.212.20"
 
-CUSTOM->engine::callback_member_comment
+engine::callback_member_comment
 +++++++++++++++++++++++++++++++++++++++
 
 New comment was added to the member in the callback queue.
@@ -233,7 +233,7 @@ New comment was added to the member in the callback queue.
         member_id: 32
         comment: "My Comment"
 
-CUSTOM->engine::callback_member_done
+engine::callback_member_done
 ++++++++++++++++++++++++++++++++++++
 
 The member in the callback queue was closed.
