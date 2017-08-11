@@ -448,7 +448,7 @@ httpRequest
                 "url": "https://sales.bpmonline.com/ServiceModel/AuthService.svc/Login",
                 "method": "POST",
                 "timeout": 2000,
-                "exportCookie": "${my_cookie}",
+                "exportCookie": "my_cookie",
                 "data": {
                     "UserName": "Supervisor",
                     "UserPassword": "Supervisor"

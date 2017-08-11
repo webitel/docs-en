@@ -197,6 +197,58 @@ Dialer's member was complited
 	variable_session: 3feacad5-2245-4a6d-a4e3-46af6a17a70b
         variable_endCause: MAX_TRY_COUNT
 
+CUSTOM->engine::callback_member_add
++++++++++++++++++++++++++++++++++++
+
+The member was added into callback queue.
+
+**Example**::
+
+        Event-Name: "CUSTOM"
+        Event-Subclass: "engine::callback_member_add"
+        variable_domain_name: "demo.webitel.com"
+        callback_time: 1502457300000
+        href: "https://webitel.com/"
+        user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36"
+        number: "12324455776"
+        location: {"ip":"194.44.212.20","country_code":"UA","country_name":"Ukraine","region_code":"46","region_name":"L'vivs'ka Oblast'","city":"Lviv","zip_code":"","time_zone":"Europe/Kiev","latitude":49.8407,"longitude":24.0305,"metro_code":0}
+        logs: [{"time":1502456841984,"log":"Open page https://webitel.com/"},{"time":1502456841985,"log":"Button is displayed"},{"time":1502456841987,"log":"Open modal window"},{"time":1502456842031,"log":"Audio input device was found"},{"time":1502456843146,"log":"Go to the working time window"},{"time":1502456844479,"log":"Switch to scheduled call window"},{"time":1502456853564,"log":"Change date to 12.08"},{"time":1502456853936,"log":"Order a scheduled call. Number: 12324455776"}]
+        domain: "demo.webitel.com"
+        done: false
+        request_ip: "194.44.212.20"
+
+CUSTOM->engine::callback_member_comment
++++++++++++++++++++++++++++++++++++++++
+
+New comment was added to the member in the callback queue.
+
+**Example**::
+
+        Event-Name: "CUSTOM"
+        Event-Subclass: "engine::callback_member_comment"
+        variable_domain_name: "demo.webitel.com"
+        created_by: "root"
+        created_on: "1502457271362"
+        comment_id: 12
+        member_id: 32
+        comment: "My Comment"
+
+CUSTOM->engine::callback_member_done
+++++++++++++++++++++++++++++++++++++
+
+The member in the callback queue was closed.
+
+**Example**::
+
+        Event-Name: "CUSTOM"
+        Event-Subclass: "engine::callback_member_done"
+        variable_domain_name: "demo.webitel.com"
+        created_by: "root"
+        created_on: "1502457271362"
+        comment_id: 12
+        member_id: 32
+        done: done
+
 DTMF
 ++++
 
