@@ -1042,7 +1042,7 @@ Text-To-Speech.
 
     [{
 		"tts": {
-			"povider": "polly",
+			"provider": "polly",
 			"accessKey": "GDNYEHJWNNYYWBJNOZA",
 			"accessToken": "c1j5QSPx9H63jmwtwMojSZiQ9QeO+3v",
 			"voice": "Maxim",
