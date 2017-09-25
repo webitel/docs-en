@@ -1079,8 +1079,8 @@ Text-To-Speech.
             "accessKey": "GDNYEHJWNNYYWBJNOZA",
             "accessToken": "c1j5QSPx9H63jmwtwMojSZiQ9QeO+3v",
             "voice": "Maxim",
-            "textType": "text",
-            "text": "Hi, my name is Maxim!"
+            "textType": "ssml",
+            "text": "<speak><amazon:effect name=\"whispered\">If you make any noise, </amazon:effect> she said, <amazon:effect name=\"whispered\">they will hear us.</amazon:effect></speak>"
         }
     },
     {
