@@ -212,6 +212,8 @@ parameters
 |                                            | A leg will be terminated when the B leg terminates. If "false" (default) the        |
 |                                            | dialplan continues to be processed after the B leg terminates.                      |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
+| ``ignore_display_updates=true``            | Not to send display UPDATEs to the leg of the call. (update_display)                |
++--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``call_timeout=20``                        | Controls how long (in seconds) to ring the endpoint. Default is 60 seconds.         |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``leg_timeout=15``                         | Can be used inside endpoints parameters only.                                       |
@@ -492,6 +494,7 @@ Logs a string of text to the console.
         "log": "my log message"
     }
 
+
 math
 ----
 
@@ -523,6 +526,42 @@ fn
 - ``floor``: rounds a number down to the nearest integer
 
 `JavaScript Math <http://www.w3schools.com/js/js_math.asp>`_
+
+
+member
+------
+
+.. py:module:: member
+
+Add new member to the dilaer.
+
+.. code-block:: json
+
+    {
+	"member": {
+        "dialer": "57a77ecbe5440b0c002ca16d",
+		"name": "Ivan Ivanov",
+		"priority": 10,
+		"variables": {
+			"productId": "235444"
+		},
+		"communications": [
+			{
+				"number": "380911234567",
+				"priority": 5,
+				"type": "1",
+				"description": "new"
+			},
+			{
+				"number": "380921234567",
+				"priority": 1,
+				"description": "old one, without communication type"
+			}
+		],
+		"expire": 1497992400000
+	    }
+    }
+
 
 park
 ----
