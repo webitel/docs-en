@@ -538,21 +538,21 @@ Add new member to the dilaer.
 .. code-block:: json
 
     {
-	"member": {
+    "member": {
         "dialer": "57a77ecbe5440b0c002ca16d",
         "name": "${effective_caller_id_name}",
-		"priority": 10,
-		"variables": {
+        "priority": 10,
+        "variables": {
             "DID": "380322530550"
-		},
-		"communications": [
+        },
+        "communications": [
             {
                 "number": "380442228392",
                 "priority": 5,
                 "type": "1",
                 "description": "call was missed"
-			}
-		]
+            }
+        ]
 	    }
     }
 
@@ -1054,15 +1054,15 @@ Speech-To-Text.
 
 .. code-block:: json
 
-    [{
-		"stt": {
-			"lang": "uk-UA",
-			"maxSec": 15,
-			"silenceThresh": 200,
-			"silenceHits": 3,
-			"setVar": "myTextVar"
-		}
-	}]
+    {
+        "stt": {
+            "lang": "uk-UA",
+            "maxSec": 15,
+            "silenceThresh": 200,
+            "silenceHits": 3,
+            "setVar": "myTextVar"
+        }
+    }
 
 tts
 ---
@@ -1074,29 +1074,30 @@ Text-To-Speech.
 .. code-block:: json
 
     [{
-		"tts": {
-			"provider": "polly",
-			"accessKey": "GDNYEHJWNNYYWBJNOZA",
-			"accessToken": "c1j5QSPx9H63jmwtwMojSZiQ9QeO+3v",
-			"voice": "Maxim",
+        "tts": {
+            "provider": "polly",
+            "accessKey": "GDNYEHJWNNYYWBJNOZA",
+            "accessToken": "c1j5QSPx9H63jmwtwMojSZiQ9QeO+3v",
+            "voice": "Maxim",
             "textType": "text",
-			"text": "Hi, my name is Maxim!"
-		}
-	},
-	{
-		"tts": {
-			"provider": "microsoft",
-			"accessKey": "cf62f9392773hyyhjkk3aa99cc9fd36f87",
-			"accessToken": "6772cff3f8d740fd91d345dsfj987309",
-			"voice": {
-				"language": "ru-RU",
-				"gender": "Male"
-			},
-			"text": "Привет, меня зовут Егор!"
-		}
-	}]
+            "text": "Hi, my name is Maxim!"
+        }
+    },
+    {
+        "tts": {
+            "provider": "microsoft",
+            "accessKey": "cf62f9392773hyyhjkk3aa99cc9fd36f87",
+            "accessToken": "6772cff3f8d740fd91d345dsfj987309",
+            "voice": {
+                "language": "ru-RU",
+                "gender": "Male"
+            },
+            "text": "Привет, меня зовут Егор!"
+        }
+    }]
 
 *Polly*: ``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
+
 
 userData
 --------
