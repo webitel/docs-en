@@ -540,25 +540,19 @@ Add new member to the dilaer.
     {
 	"member": {
         "dialer": "57a77ecbe5440b0c002ca16d",
-		"name": "Ivan Ivanov",
+        "name": "${effective_caller_id_name}",
 		"priority": 10,
 		"variables": {
-			"productId": "235444"
+            "DID": "380322530550"
 		},
 		"communications": [
-			{
-				"number": "380911234567",
-				"priority": 5,
-				"type": "1",
-				"description": "new"
-			},
-			{
-				"number": "380921234567",
-				"priority": 1,
-				"description": "old one, without communication type"
+            {
+                "number": "380442228392",
+                "priority": 5,
+                "type": "1",
+                "description": "call was missed"
 			}
-		],
-		"expire": 1497992400000
+		]
 	    }
     }
 
@@ -1085,6 +1079,7 @@ Text-To-Speech.
 			"accessKey": "GDNYEHJWNNYYWBJNOZA",
 			"accessToken": "c1j5QSPx9H63jmwtwMojSZiQ9QeO+3v",
 			"voice": "Maxim",
+            "textType": "text",
 			"text": "Hi, my name is Maxim!"
 		}
 	},
@@ -1100,6 +1095,8 @@ Text-To-Speech.
 			"text": "Привет, меня зовут Егор!"
 		}
 	}]
+
+*Polly*: ``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
 
 userData
 --------
