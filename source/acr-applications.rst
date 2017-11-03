@@ -301,6 +301,47 @@ Add number to the callback queue.
         }
     }
 
+cdr
+---
+
+.. py:module:: cdr
+
+Create search request into the CDR
+
+.. code-block:: json
+
+    {
+        "cdr": {
+            "exportVar": {
+                "res": "aggregations.avgQueue.value"
+            },
+            "elastic": {
+                "aggs": {
+                    "avgQueue": {
+                        "avg": {
+                            "field": "Queue Answer Delay"
+                        }
+                    }
+                },
+                "limit": 0,
+                "query": "",
+                "filter": [
+                {
+                    "bool": {
+                        "must": [
+                            {
+                                "term": {
+                                    "variables.cc_queue": "myQueueName@domain.com"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
 DTMF
 ----
 
