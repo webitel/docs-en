@@ -283,6 +283,24 @@ The inbound and outbound conference bridge service.
 | ``nomoh``      | Disable music on hold when this member is the only member in the conference.            |
 +----------------+-----------------------------------------------------------------------------------------+
 
+callback
+--------
+
+.. py:module:: callback
+
+Add number to the callback queue.
+
+.. code-block:: json
+
+    {
+        "callback": {
+            "setVar": "return_value",
+            "widget": "myWidget",
+            "queue": "callbackQueueName",
+            "number": "${caller_id_number}"
+        }
+    }
+
 DTMF
 ----
 
