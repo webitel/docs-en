@@ -973,17 +973,30 @@ schedule
 
 .. py:module:: schedule
 
-Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future.
+Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future. Also, you can schedule a callback:
 
 .. code-block:: json
 
-    {
+    [{
+        "schedule": {
+            "action": "goto",
+            "seconds": 240,
+            "data": "default:1000"
+        }
+    },{
         "schedule": {
             "action": "hangup",
             "seconds": 360,
             "data": "ALLOTTED_TIMEOUT"
         }
-    }
+    },{
+        "schedule": {
+            "action": "callback",
+            "seconds": 5,
+            "number": "${caller_id_number}",
+            "destination": "380891205014"
+        }
+    }]
 
 sipRedirect
 -----------
