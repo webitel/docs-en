@@ -226,6 +226,20 @@ parameters
 | ``sip_renegotiate_codec_on_reinvite=true`` | Allow SDP codec change with re-INVITE.                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 
+uuid bridge
++++++++++++
+
+Bridge two call legs together. **Bridge** needs atleast any one leg to be answered.
+
+.. code-block:: json
+
+    {
+        "bridge": {
+            "uuid": "${new_uuid}",
+            "other_uuid": "${other_uuid}"
+        }
+    }
+
 calendar
 --------
 
@@ -258,7 +272,6 @@ The inbound and outbound conference bridge service.
             "flags": ["mute", "moderator"]
         }
     }
-
 
 - **name** - Conference room name.
 - **pin** - Pin code that must be entered before user is allowed to enter the conference.
@@ -487,12 +500,23 @@ hangup
 
 .. py:module:: hangup
 
-Hangs up a channel, with an optional cause code supplied.
+Hangs up a current channel, with an optional cause code supplied.
 
 .. code-block:: json
 
     {
         "hangup": ""
+    }
+
+Hangs up a specific **<uuid>** channel, with an optional cause code supplied.
+
+.. code-block:: json
+
+    {
+        "hangup": {
+            "uuid": "${another_channel_uuid}",
+            "cause": "NORMAL_CLEARING"
+        }
     }
 
 The default code is **NORMAL_CLEARING**. You can specify any code from the :ref:`hangup-cause-code-table`.
@@ -615,6 +639,48 @@ Add new member to the dilaer.
 	    }
     }
 
+originate
+---------
+
+.. py:module:: originate
+
+Originate a new call.
+
+.. code-block:: json
+
+    {
+        "originate": {
+            "uuid": "${new_uuid}",
+            "delay": 2,
+            "timeout": 40,
+            "cid_num": "${caller_id_number}",
+            "cid_name": "${caller_id_name}",
+            "exportVar": {
+                "other_uuid": "${uuid}",
+                "new_uuid": "${new_uuid}"
+            },
+            "endpoint": {
+                "name": "gw_name1",
+                "type": "sipGateway",
+                "dialString": "${caller_id2}",
+                "parameters": [ "ignore_early_media=true" ]
+            },
+            "actions": [
+            {
+                "playback": {
+                    "name": "my.mp3",
+                    "type": "mp3"
+                }
+            },
+            {
+                "bridge": {
+                    "uuid": "${new_uuid}",
+                    "other_uuid": "${other_uuid}"
+                }
+            }
+            ]
+        }
+    }
 
 park
 ----
