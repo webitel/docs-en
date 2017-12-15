@@ -931,7 +931,9 @@ Record to a file from the channel's input media stream.
             "type": "mp3",
             "maxSec": 60,
             "silenceHits": 5,
-            "email": ["office@webitel.com", "admin@webitel.com"]
+            "email": ["office@webitel.com", "admin@webitel.com"],
+            "emailSubject": "You have a new message!",
+            "emailBody": "Message fom ${caller_id_number}"
         }
     }
 
@@ -947,6 +949,10 @@ Record to a file from the channel's input media stream.
 | ``silenceHits``    | How many seconds of silence will be tolerated before the recording stops.                |
 +--------------------+------------------------------------------------------------------------------------------+
 | ``email``          | Send recorded file to the Email *(optional)*. :ref:`restful-http-api-email` is required. |
++--------------------+------------------------------------------------------------------------------------------+
+| ``emailSubject``   | Email subject *(optional)*. Can contain any channel variables.                           |
++--------------------+------------------------------------------------------------------------------------------+
+| ``emailBody``      | Email body *(optional)*. Can contain any channel variables.                              |
 +--------------------+------------------------------------------------------------------------------------------+
 
 recordSession
@@ -966,7 +972,9 @@ Records an entire phone call or session.
             "bridged": true,
             "minSec": 2,
             "followTransfer": true,
-            "email": ["office@webitel.com", "admin@webitel.com"]
+            "email": ["office@webitel.com", "admin@webitel.com"],
+            "emailSubject": "You have a new message!",
+            "emailBody": "Message fom ${caller_id_number}"
         }
     }
 
@@ -986,6 +994,10 @@ Records an entire phone call or session.
 | ``followTransfer`` | If you want the call recording to continue after transferring, set variable to **true**. |
 +--------------------+------------------------------------------------------------------------------------------+
 | ``email``          | Send recorded file to the Email *(optional)*. :ref:`restful-http-api-email` is required. |
++--------------------+------------------------------------------------------------------------------------------+
+| ``emailSubject``   | Email subject *(optional)*. Can contain any channel variables.                           |
++--------------------+------------------------------------------------------------------------------------------+
+| ``emailBody``      | Email body *(optional)*. Can contain any channel variables.                              |
 +--------------------+------------------------------------------------------------------------------------------+
 
 ringback
