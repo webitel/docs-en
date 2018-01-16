@@ -240,13 +240,19 @@ switch
 exists
 ++++++
 
-.. py:module:: exists-fn
+.. js:function:: &exists(resource, name)
+    
+    :param string resource: media, account, queue or dialer
+    :param string name: the resource name
+    :returns: true, false
+
+For parameter descriptions see :py:mod:`exists` application.
 
 .. code-block:: json 
 
     {
       "if": {
-        "expression": "&exists('account', '1000')",
+        "expression": "&exists(account, 1000)",
         "then": [
           {
               "bridge": {
@@ -261,7 +267,5 @@ exists
         ]
       }
     }
-
-For parameter descriptions see :py:mod:`exists` application.
 
 For more information go to the :ref:`acr-applications` page.
