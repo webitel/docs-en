@@ -240,7 +240,7 @@ switch
 exists
 ++++++
 
-.. py:module:: exists-check
+.. py:module:: exists-fn
 
 .. code-block:: json 
 
