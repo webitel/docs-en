@@ -146,8 +146,19 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
             "strategy": "multiple",
             "pickup": "mygroup",
             "codecs": ["G729", "PCMA"],
+            "queue": {
+                "enable": false,
+                "retries": 10,
+                "timeout": 15,
+                "sleep": 5,
+                "playback": {
+                    "name": "my-MOH-file.wav",
+                    "type": "wav"
+                }
+            },
             "parameters": ["instant_ringback=true"],
-            "endpoints": [{
+            "endpoints": [
+                {
                 "name": "gw_name1",
                 "type": "sipGateway",
                 "dialString": "&reg0.$1",
@@ -170,7 +181,8 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
                 "host": "wbtl.pstn.twilio.com",
                 "dialString": "+1&reg0.$1",
                 "parameters": ["origination_caller_id_number=911"]
-              }]
+              }
+            ]
         }
     }
 
@@ -225,6 +237,23 @@ parameters
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``sip_renegotiate_codec_on_reinvite=true`` | Allow SDP codec change with re-INVITE.                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
+
+queue
++++++
+
+Enables queue on the server side.
+
++-----------------+--------------------------------------------------------------------------+
+| ``enable``      | Enable or disable the queue. Can be `true` or `false`.                   |
++-----------------+--------------------------------------------------------------------------+
+| ``retries``     | The number of retries.                                                   |
++-----------------+--------------------------------------------------------------------------+
+| ``timeout``     | Controls how long (in seconds) to ring the endpoint.                     |
++-----------------+--------------------------------------------------------------------------+
+| ``sleep``       | The pause (in seconds) between tries.                                    |
++-----------------+--------------------------------------------------------------------------+
+| ``playback``    | Any file to playback during waiting in the queue. See :py:mod:`playback` |
++-----------------+--------------------------------------------------------------------------+
 
 uuid bridge
 +++++++++++
@@ -389,6 +418,31 @@ Flushes DTMFs received on a channel. Useful in cases where callers may have ente
      "flushDTMF": true
    }
 
+eavesdrop
+---------
+
+.. py:module:: eavesdrop
+
+``eavesdrop`` provides the ability to spy on a channel.
+
+.. code-block:: json
+
+    {
+        "eavesdrop": {
+            "user": "1000",
+            "spy": false
+        }
+    }
+
+DTMF signals during eavesdrop:
+
+- **2** to speak with the user
+- **1** to speak with the other half
+- **3** to engage a three way
+- **0** to restore eavesdrop.
+
+The *spy: true* provides persistent eavesdrop on all channels bridged to a certain user.
+
 echo
 ----
 
@@ -401,6 +455,28 @@ Simply returns all audio sent, including voice, DTMF, etc after the specified de
     {
         "echo": "0"
     }
+
+exists
+------
+
+.. py:module:: exists
+
+Determines whether the given resource exists or not.
+
+.. code-block:: json
+
+    {
+        "exists": {
+            "resource": "media",
+            "name": "myFile.wav", 
+            "type": "wav",
+            "setVar": "DoesMyFileExist"
+    }
+
+- **resource**: media, account, queue or dialer.
+- **name**: the resource name
+- **setVar**: assigns the `true` or `false` into the variable
+- **type**: mp3 or wav, for media resources only
 
 Email
 -----
@@ -426,31 +502,6 @@ Sending an Email.
             "message": "<H3>Turn on SMS</h3>\n<b>Creditcard</b>: ${Creditcard[0]} <i>***</i> ${Creditcard[1]}"
         }
     }
-
-eavesdrop
----------
-
-.. py:module:: eavesdrop
-
-``eavesdrop`` provides the ability to spy on a channel.
-
-.. code-block:: json
-
-    {
-        "eavesdrop": {
-            "user": "1000",
-            "spy": false
-        }
-    }
-
-DTMF signals during eavesdrop:
-
-- **2** to speak with the user
-- **1** to speak with the other half
-- **3** to engage a three way
-- **0** to restore eavesdrop.
-
-The *spy: true* provides persistent eavesdrop on all channels bridged to a certain user.
 
 FAX
 ---
@@ -863,8 +914,7 @@ An inbound call queuing application that can be used for call center needs.
 
 .. code-block:: json
 
-    [
-      {
+    {
         "queue": {
           "name": "myQueueName",
           "timer": {
@@ -895,8 +945,7 @@ An inbound call queuing application that can be used for call center needs.
             ]
           }
         }
-      }
-    ]
+    }
 
 timer
 +++++
@@ -1011,7 +1060,7 @@ ringback
 
 .. code-block:: json
 
-    [{
+    {
       "ringback": {
         "call": {
             "name": "my.mp3",
@@ -1023,8 +1072,9 @@ ringback
         "transfer": {
             "name": "$${us-ring}",
             "type": "tone"
-        }}
-    }]
+        }
+      }
+    }
 
 mp3 and wav
 +++++++++++
@@ -1055,19 +1105,22 @@ Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future. Also, you can sched
 
 .. code-block:: json
 
+
     [{
-        "schedule": {
-            "action": "goto",
-            "seconds": 240,
-            "data": "default:1000"
+    "schedule": {
+        "action": "goto",
+        "seconds": 240,
+        "data": "default:1000"
         }
-    },{
+    },
+    {
         "schedule": {
             "action": "hangup",
             "seconds": 360,
             "data": "ALLOTTED_TIMEOUT"
         }
-    },{
+    },
+    {
         "schedule": {
             "action": "callback",
             "seconds": 5,
@@ -1248,7 +1301,6 @@ Text-To-Speech.
 
 *Polly*: ``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
 
-
 userData
 --------
 
@@ -1259,12 +1311,12 @@ Retrieves user variables as defined in the directory.
 .. code-block:: json
 
     {
-	  "userData": {
-	      "name": "102",
-	      "var": "account_state",
-	      "setVar": "acc_state"
-	  }
-	}
+      "userData": {
+          "name": "102",
+          "var": "account_state",
+          "setVar": "acc_state"
+      }
+    }
 
 Variables
 ---------
@@ -1280,8 +1332,7 @@ Set a channel variable.
 
 .. code-block:: json
 
-   [
-    {
+    [{
         "setVar": "a=1"
     },
     {
@@ -1292,8 +1343,7 @@ Set a channel variable.
     },
     {
         "setVar": "nolocal:a=1"
-    }
-   ]
+    }]
 
 - **all** - Exports a channel variable for the A leg and the B leg.
 - **nolocal** - Exports a channel variable only for the B leg.
