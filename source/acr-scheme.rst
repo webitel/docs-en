@@ -262,9 +262,6 @@ exists
       }
     }
 
-
-- ``variable`` - Variable for cases.
-- ``case`` - The value of the variable is compared with the values of each case.
-- ``default`` - The block of the applications that would be executed if the given value is not matched with any of the pre-defined values.
+For parameter descriptions see :py:mod:`exists` application.
 
 For more information go to the :ref:`acr-applications` page.
