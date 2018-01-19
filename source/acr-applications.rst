@@ -584,6 +584,7 @@ httpRequest
                 "url": "https://sales.bpmonline.com/ServiceModel/AuthService.svc/Login",
                 "method": "POST",
                 "timeout": 2000,
+                "responseCode": "http_response_code",
                 "exportCookie": "my_cookie",
                 "data": {
                     "UserName": "Supervisor",
@@ -596,6 +597,7 @@ httpRequest
                 "url": "https://sales.bpmonline.com/${id}/dataservice/json/reply/SelectQuery",
                 "method": "POST",
                 "timeout": 1000,
+                "responseCode": "http_response_code",
                 "headers": {
                     "Content-Type":"application/json",
                     "Cookie": "${my_cookie}"
