@@ -146,16 +146,6 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
             "strategy": "multiple",
             "pickup": "mygroup",
             "codecs": ["G729", "PCMA"],
-            "queue": {
-                "enable": false,
-                "retries": 10,
-                "timeout": 15,
-                "sleep": 5,
-                "playback": {
-                    "name": "my-MOH-file.wav",
-                    "type": "wav"
-                }
-            },
             "parameters": ["instant_ringback=true"],
             "endpoints": [
                 {
@@ -188,6 +178,8 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
 
 endpoints types
 +++++++++++++++
+
+The `endpoints` block can contain not more than 15 endpoints.
 
 - **sipGateway** 
 - **user**
@@ -237,23 +229,6 @@ parameters
 +--------------------------------------------+-------------------------------------------------------------------------------------+
 | ``sip_renegotiate_codec_on_reinvite=true`` | Allow SDP codec change with re-INVITE.                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------+
-
-queue
-+++++
-
-Enables queue on the server side.
-
-+-----------------+--------------------------------------------------------------------------+
-| ``enable``      | Enable or disable the queue. Can be `true` or `false`.                   |
-+-----------------+--------------------------------------------------------------------------+
-| ``retries``     | The number of retries.                                                   |
-+-----------------+--------------------------------------------------------------------------+
-| ``timeout``     | Controls how long (in seconds) to ring the endpoint.                     |
-+-----------------+--------------------------------------------------------------------------+
-| ``sleep``       | The pause (in seconds) between tries.                                    |
-+-----------------+--------------------------------------------------------------------------+
-| ``playback``    | Any file to playback during waiting in the queue. See :py:mod:`playback` |
-+-----------------+--------------------------------------------------------------------------+
 
 uuid bridge
 +++++++++++
