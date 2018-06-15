@@ -925,11 +925,12 @@ An inbound call queuing application that can be used for call center needs.
         }
     }
 
-+-------------------------+-------------------------------------------------------------+
-| ``name``                | The queue name.                                             |
-+-------------------------+-------------------------------------------------------------+
-| ``transferAfterBridge`` | The name of the callflow, where to transfer a success calls |
-+-------------------------+-------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------+
+| ``name``                | The queue name.                                                    |
++-------------------------+--------------------------------------------------------------------+
+| ``transferAfterBridge`` | The name of the callflow, where to transfer a success calls.       |
+|                         | Please notice, that `hangup_after_bridge` variable must be `false` |
++-------------------------+--------------------------------------------------------------------+
 
 timer
 +++++
