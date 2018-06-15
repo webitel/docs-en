@@ -12,7 +12,7 @@ Modify agent status.
 
 .. code-block:: json
 
-   { 
+   {
       "agent":  {
           "name": "1000",
           "status": "Available",
@@ -37,13 +37,13 @@ Answering machine detection (voice activity detection).
 
    {
      "amd":  {
-        "maximumWordLength": 5000, 
-        "maximumNumberOfWords": 3, 
+        "maximumWordLength": 5000,
+        "maximumNumberOfWords": 3,
         "betweenWordsSilence": 50,
         "minWordLength": 100,
-        "totalAnalysisTime": 5000, 
-        "silenceThreshold": 256, 
-        "afterGreetingSilence": 800, 
+        "totalAnalysisTime": 5000,
+        "silenceThreshold": 256,
+        "afterGreetingSilence": 800,
         "greeting": 1500,
         "initialSilence": 2500
         }
@@ -181,7 +181,7 @@ endpoints types
 
 The `endpoints` block can contain not more than 15 endpoints.
 
-- **sipGateway** 
+- **sipGateway**
 - **user**
 - **device**
 - **sipUri**
@@ -443,7 +443,7 @@ Determines whether the given resource exists or not.
     {
         "exists": {
             "resource": "media",
-            "name": "myFile.wav", 
+            "name": "myFile.wav",
             "type": "wav",
             "setVar": "DoesMyFileExist"
     }
@@ -894,6 +894,7 @@ An inbound call queuing application that can be used for call center needs.
     {
         "queue": {
           "name": "myQueueName",
+          "transferAfterBridge": "public:feedback_ivr_menu",
           "timer": {
             "interval": 90,
             "tries": 1,
@@ -924,6 +925,12 @@ An inbound call queuing application that can be used for call center needs.
         }
     }
 
++-------------------------+-------------------------------------------------------------+
+| ``name``                | The queue name.                                             |
++-------------------------+-------------------------------------------------------------+
+| ``transferAfterBridge`` | The name of the callflow, where to transfer a success calls |
++-------------------------+-------------------------------------------------------------+
+
 timer
 +++++
 
@@ -945,7 +952,7 @@ recordFile
 
 .. py:module:: recordFile
 
-Record to a file from the channel's input media stream. 
+Record to a file from the channel's input media stream.
 
 .. code-block:: json
 
@@ -986,7 +993,7 @@ recordSession
 
 .. py:module:: recordSession
 
-Records an entire phone call or session. 
+Records an entire phone call or session.
 
 .. code-block:: json
 
@@ -1014,7 +1021,7 @@ Records an entire phone call or session.
 +--------------------+------------------------------------------------------------------------------------------+
 | ``bridged``        | Record session only when the channel is bridged.                                         |
 +--------------------+------------------------------------------------------------------------------------------+
-| ``minSec``         | Sets the minimum recording length. Normally a recording must be at least 3 seconds long. | 
+| ``minSec``         | Sets the minimum recording length. Normally a recording must be at least 3 seconds long. |
 |                    | If a recording does not meet the minimum length, it is deleted after being recorded.     |
 +--------------------+------------------------------------------------------------------------------------------+
 | ``followTransfer`` | If you want the call recording to continue after transferring, set variable to **true**. |
@@ -1183,7 +1190,7 @@ String application help you to work with strings.
 .. code-block:: json
 
     [{
-        "string": {		
+        "string": {
             "data": "${destination_number}",
             "setVar": "myVar",
             "fn": "slice",
