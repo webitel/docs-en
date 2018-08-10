@@ -440,13 +440,25 @@ Determines whether the given resource exists or not.
 
 .. code-block:: json
 
-    {
+    [{
         "exists": {
             "resource": "media",
             "name": "myFile.wav",
             "type": "wav",
             "setVar": "DoesMyFileExist"
-    }
+    },{
+       "exists": {
+            "resource": "dialer",
+            "name": "5b4351e0a6e784000ab5fc89",
+            "member": {
+                "communications": {
+                "number": "${caller_id_number}",
+                "state": 0
+                }
+            },
+            "setVar": "DoesMemberExist"
+        }
+    }]
 
 - **resource**: media, account, queue or dialer.
 - **name**: the resource name
