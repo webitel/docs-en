@@ -1,9 +1,9 @@
-Webitel API Documentation 
+Webitel API Documentation
 *************************
 
 `Webitel <http://webitel.com>`_ is a scalable, distributed, cloud-based VoIP telephony platform.
 
-Webitel is designed to handle anything from small offices to big contact centers with CRM integration. Webitel is based on the best open source applications including Docker, FreeSWITCH, Node.js, MongoDB, Elasticsearch and Kibana.
+Webitel is designed to handle anything from small offices to big contact centers with CRM integration. Webitel is based on the best open source applications including Docker, FreeSWITCH, Node.js, PostgreSQL, Elasticsearch and Kibana.
 
 RESTful HTTP API v2
 ===================

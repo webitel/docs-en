@@ -256,9 +256,16 @@ Set `true` or `false` into the variable when current datetime is in the Calendar
     {
         "calendar": {
             "name": "my Business Calendar",
+            "extended": false,
             "setVar": "isWorkDay"
         }
     }
+
+If `extended` is true, the varaible can takes additional values:
+
+- holiday
+- ahead
+- expire
 
 conference
 ----------
@@ -446,7 +453,9 @@ Determines whether the given resource exists or not.
             "name": "myFile.wav",
             "type": "wav",
             "setVar": "DoesMyFileExist"
-    },{
+        }
+    },
+    {
        "exists": {
             "resource": "dialer",
             "name": "5b4351e0a6e784000ab5fc89",
@@ -464,6 +473,7 @@ Determines whether the given resource exists or not.
 - **name**: the resource name
 - **setVar**: assigns the `true` or `false` into the variable
 - **type**: mp3 or wav, for media resources only
+- **member**: the member parameters for dialer resources only
 
 Email
 -----
@@ -601,7 +611,25 @@ httpRequest
                     "owner_caller_id_number": "callerIdOwner"
                 }
         }
-    }]
+    },{
+      "httpRequest": {
+         "url": "http://10.10.10.25/tst2.xml",
+         "method": "GET",
+         "timeout": 5000,
+         "headers": {
+            "Content-Type": "text/xml; charset=utf-8",
+            "SOAPAction": "http://web.cbr.ru/AllDataInfoXML"
+         },
+         "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><AllDataInfoXML xmlns=\"http://web.cbr.ru/\" /></soap:Body></soap:Envelope>",
+         "exportVariables": {
+            "effective_caller_id_name": "Envelope/Body/AuthorizationResponse/AuthorizationResult/ResultCode/@asd",
+            "owner_caller_id_number": "Envelope/Body/AuthorizationResponse/AuthorizationResult/ResultCode/text()"
+         }
+       }
+     }
+    ]
+
+`XML XPath specification <https://godoc.org/gopkg.in/xmlpath.v2>`_
 
 
 log
