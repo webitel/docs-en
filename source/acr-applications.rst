@@ -151,7 +151,7 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
                 {
                 "name": "gw_name1",
                 "type": "sipGateway",
-                "dialString": "&reg0.$1",
+                "dialString": "$1",
                 "parameters": ["sip_invite_params=user=phone"]
               },
               {
@@ -169,7 +169,7 @@ Bridge a new channel to the existing one.Generally used to route an incoming cal
                 "type": "sipUri",
                 "profile": "nonreg",
                 "host": "wbtl.pstn.twilio.com",
-                "dialString": "+1&reg0.$1",
+                "dialString": "+1$1",
                 "parameters": ["origination_caller_id_number=911"]
               }
             ]
@@ -524,6 +524,23 @@ Receive a FAX as a PDF file.
 +----------------+-----------------------------------------------------------------------------------------+
 | ``email``      | Send PDF file to Email *(optional)*. :ref:`restful-http-api-email` is required.         |
 +----------------+-----------------------------------------------------------------------------------------+
+
+js
+--
+
+.. py:module:: js
+
+Executes JavaScript code.
+
+.. code-block:: json
+
+   {
+    "js": {
+      "data": "var time = LocalDate(); time.setDate(time.getDate() + (+${dpd}*-1)); return time.getMonth() + '-' + time.getDate() + '-' + time.getFullYear()",
+      "setVar": "myVar"
+    }
+   }
+
 
 goto
 ----
