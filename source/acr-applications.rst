@@ -122,6 +122,7 @@ The blackList application executes various actions for the blacklisted numbers.
     {
         "blackList": {
             "name": "myNewBlackList",
+            "number": "${caller_id_number}",
             "actions": [
                 {
                     "hangup": "INCOMING_CALL_BARRED"
