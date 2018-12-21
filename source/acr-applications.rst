@@ -1364,8 +1364,52 @@ Text-To-Speech.
 
 *Polly*: ``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
 
+
+Users
+-----
+
+setUser
++++++++
+
+.. py:module:: setUser
+
+Pulls all of the channel variables defined for a user as if the user had auth'd.
+
+.. code-block:: json
+
+    {
+      "setUser": {
+          "name": "102"
+      }
+    }
+
+findUser
+++++++++
+
+.. py:module:: findUser
+
+Find an user by variables or parameters.
+
+.. code-block:: json
+
+    {
+      "findUser": {
+        "filter": {
+          "vm-password": "${userPIN}"
+        },
+        "columns": [
+          "id",
+          "effective_caller_id_name"
+        ],
+        "exportVariables": {
+          "ext_id": "0.id",
+          "effective_caller_id_name": "0.effective_caller_id_name"
+        }
+      }
+    }
+
 userData
---------
+++++++++
 
 .. py:module:: userData
 
