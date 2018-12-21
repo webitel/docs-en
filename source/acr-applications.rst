@@ -1172,6 +1172,26 @@ Schedule a :py:mod:`hangup` or :py:mod:`goto` in the future. Also, you can sched
         }
     }]
 
+sendEvent
+---------
+
+.. py:module:: sendEvent
+
+sendEvent pplication can be used to fire aribtrary events.
+
+.. code-block:: json
+
+  {
+    "sendEvent": {
+      "dump": false,
+      "data": {
+        "myUUID": "${uuid}"
+      }
+    }
+  }
+
+The `dump: true` will add all channel variables.
+
 sipRedirect
 -----------
 

@@ -16,7 +16,7 @@ Webitel allows you make search request to the elasticsearch index using `request
 
       POST /api/v2/cdr/text HTTP/1.1
       Content-Type: application/json
-      X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDIxNzkzNTh9.pKXWfzXqbp8FMbOKocNaSlT1bYq4Xqzol-0kEXOY0_s
+      X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0NDIwMDIxNzkzNTh9
       X-Key: 8fd26a17-eb28-4c74-aa6f-a3794f4f466c
 
       {
@@ -189,7 +189,9 @@ Webitel allows you make search request to the elasticsearch index using `request
 
    ::
 
-      curl -XPOST -H 'Content-Type: application/json' -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9i' "https://cloud.webitel.com/engine/api/v2/cdr/text" \
+      curl -XPOST -H 'Content-Type: application/json' \
+      -H 'X-Access-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9i'\
+      "https://cloud.webitel.com/engine/api/v2/cdr/text" \
       -d '{\
           "columns": [\
               "created_time",\
