@@ -1177,7 +1177,7 @@ sendEvent
 
 .. py:module:: sendEvent
 
-sendEvent pplication can be used to fire aribtrary events.
+sendEvent application can be used to fire arbitrary events.
 
 .. code-block:: json
 
