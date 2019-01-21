@@ -322,7 +322,8 @@ Add number to the callback queue.
             "setVar": "return_value",
             "widget": "myWidget",
             "queue": "callbackQueueName",
-            "number": "${caller_id_number}"
+            "number": "${caller_id_number}",
+            "comment": "Additional comment"
         }
     }
 
@@ -1290,7 +1291,7 @@ String application help you to work with strings.
 
 - ``data``: input variable or string
 - ``setVar``: assign the output of a function to a variable
-- ``fn``: JavaScript function
+- ``fn``: string functions
 - ``args``: function arguments
 
 fn
@@ -1308,6 +1309,10 @@ fn
 - ``charCodeAt``: returns the unicode of the character at a specified index in a string
 - ``split``: A string can be converted to an array with the ``split`` function
 - ``reverse``: Reverse the provided string
+- ``base64``: base64 encoder / decoder
+- ``MD5``: Computes a digest from a string using ``MD5`` algorithm
+- ``SHA-256``: Computes a digest from a string using ``SHA-256`` algorithm
+- ``SHA-512``: Computes a digest from a string using ``SHA-512`` algorithm
 
 `JavaScript String <http://www.w3schools.com/js/js_string_methods.asp>`_
 
