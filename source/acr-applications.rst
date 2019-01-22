@@ -335,38 +335,45 @@ cdr
 Create search request into the CDR
 
 .. code-block:: json
-
     {
-        "cdr": {
-            "exportVar": {
-                "res": "aggregations.avgQueue.value"
-            },
-            "elastic": {
-                "aggs": {
-                    "avgQueue": {
-                        "avg": {
-                            "field": "Queue Answer Delay"
-                        }
-                    }
-                },
-                "limit": 0,
-                "query": "",
-                "filter": [
-                {
-                    "bool": {
-                        "must": [
-                            {
-                                "term": {
-                                    "variables.cc_queue": "myQueueName@domain.com"
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        }
-    }
+       "cdr": {
+         "exportVar": {
+           "avg_wait": "aggregations.waiting.value"
+         },
+         "elastic": {
+           "aggs": {
+             "waiting": {
+               "avg": {
+                 "field": "queue.wait_duration"
+               }
+             }
+           },
+           "index": "cdr-a*",
+           "limit": 0,
+           "query": "*",
+           "filter": {
+             "bool": {
+               "must": [
+                 {
+                   "match": {
+                     "queue.name": "myQueue"
+                   }
+                 },
+                 {
+                   "range": {
+                     "created_time": {
+                       "gte": "now-1h",
+                       "lte": "now"
+                     }
+                   }
+                 }
+               ]
+             }
+           }
+         }
+       }
+     }
+
 
 DTMF
 ----
