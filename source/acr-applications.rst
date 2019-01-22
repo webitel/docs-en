@@ -335,6 +335,7 @@ cdr
 Create search request into the CDR
 
 .. code-block:: json
+
     {
        "cdr": {
          "exportVar": {
