@@ -1359,6 +1359,7 @@ Text-To-Speech.
             "provider": "microsoft",
             "accessKey": "cf62f9392773hyyhjkk3aa99cc9fd36f87",
             "accessToken": "6772cff3f8d740fd91d345dsfj987309",
+            "region": "eastasia",
             "voice": {
                 "language": "ru-RU",
                 "gender": "Male"
@@ -1367,7 +1368,24 @@ Text-To-Speech.
         }
     }]
 
-*Polly*: ``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
+Polly
++++++
+
+``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
+
+Microsoft
++++++++++
+
+``region`` specifies the endpoints for speech-to-text and text-to-speech requests:
+
+- westus
+- westus2
+- eastus
+- eastus2
+- eastasia
+- southeastasia
+- northeurope
+- westeurope
 
 
 Users
