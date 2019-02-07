@@ -638,7 +638,8 @@ httpRequest
                     "owner_caller_id_number": "callerIdOwner"
                 }
         }
-    },{
+    },
+    {
       "httpRequest": {
          "url": "http://10.10.10.25/tst2.xml",
          "method": "GET",
@@ -656,7 +657,8 @@ httpRequest
      }
     ]
 
-`XML XPath specification <https://godoc.org/gopkg.in/xmlpath.v2>`_
+- `get JSON <https://github.com/tidwall/gjson>`_
+- `XML XPath specification <https://godoc.org/gopkg.in/xmlpath.v2>`_
 
 
 log
