@@ -245,6 +245,39 @@ Bridge two call legs together. **Bridge** needs atleast any one leg to be answer
         }
     }
 
+cache
+-----
+
+.. py:module:: cache
+
+The application can be used to distribute key/value pairs without having to resort to using a database.
+
+.. code-block:: json
+
+    [
+      {
+        "cache": {
+          "method": "add",
+          "expire": 10,
+          "key": "CID",
+          "value": "${caller_id_number}"
+        }
+      },
+      {
+        "cache": {
+          "method": "get",
+          "key": "CID",
+          "setVar": "return_value"
+        }
+      },
+      {
+        "cache": {
+          "method": "remove",
+          "key": "CID"
+        }
+      }
+    ]
+
 calendar
 --------
 
@@ -267,46 +300,6 @@ If `extended` is true, the varaible can takes additional values:
 - holiday
 - ahead
 - expire
-
-conference
-----------
-
-.. py:module:: conference
-
-The inbound and outbound conference bridge service.
-
-.. code-block:: json
-
-    {
-        "conference": {
-            "name": "ConferenceName",
-            "pin": "1234" ,
-            "flags": ["mute", "moderator"]
-        }
-    }
-
-- **name** - Conference room name.
-- **pin** - Pin code that must be entered before user is allowed to enter the conference.
-
-+----------------+-----------------------------------------------------------------------------------------+
-| Flags          | Description                                                                             |
-+================+=========================================================================================+
-| ``moderator``  | Flag member as a moderator.                                                             |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``join-only``  | Only allow joining a conference that already exists.                                    |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``vmute``      | Enter conference video muted.                                                           |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``mute``       | Enter conference muted.                                                                 |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``deaf``       | Enter conference deafed (can not hear conference); will also mute the mic.              |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``endconf``    | Ends conference when all members with this flag leave the conference.                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``mintwo``     | End conference when it drops below 2 participants after a member enters with this flag. |
-+----------------+-----------------------------------------------------------------------------------------+
-| ``nomoh``      | Disable music on hold when this member is the only member in the conference.            |
-+----------------+-----------------------------------------------------------------------------------------+
 
 callback
 --------
@@ -375,6 +368,45 @@ Create search request into the CDR
        }
      }
 
+conference
+----------
+
+.. py:module:: conference
+
+The inbound and outbound conference bridge service.
+
+.. code-block:: json
+
+    {
+        "conference": {
+            "name": "ConferenceName",
+            "pin": "1234" ,
+            "flags": ["mute", "moderator"]
+        }
+    }
+
+- **name** - Conference room name.
+- **pin** - Pin code that must be entered before user is allowed to enter the conference.
+
++----------------+-----------------------------------------------------------------------------------------+
+| Flags          | Description                                                                             |
++================+=========================================================================================+
+| ``moderator``  | Flag member as a moderator.                                                             |
++----------------+-----------------------------------------------------------------------------------------+
+| ``join-only``  | Only allow joining a conference that already exists.                                    |
++----------------+-----------------------------------------------------------------------------------------+
+| ``vmute``      | Enter conference video muted.                                                           |
++----------------+-----------------------------------------------------------------------------------------+
+| ``mute``       | Enter conference muted.                                                                 |
++----------------+-----------------------------------------------------------------------------------------+
+| ``deaf``       | Enter conference deafed (can not hear conference); will also mute the mic.              |
++----------------+-----------------------------------------------------------------------------------------+
+| ``endconf``    | Ends conference when all members with this flag leave the conference.                   |
++----------------+-----------------------------------------------------------------------------------------+
+| ``mintwo``     | End conference when it drops below 2 participants after a member enters with this flag. |
++----------------+-----------------------------------------------------------------------------------------+
+| ``nomoh``      | Disable music on hold when this member is the only member in the conference.            |
++----------------+-----------------------------------------------------------------------------------------+
 
 DTMF
 ----
