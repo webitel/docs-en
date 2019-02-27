@@ -511,7 +511,7 @@ Determines whether the given resource exists or not.
         }
     }]
 
-- **resource**: media, account, queue or dialer.
+- **resource**: media, account, queue, callback or dialer.
 - **name**: the resource name
 - **setVar**: assigns the `true` or `false` into the variable
 - **type**: mp3 or wav, for media resources only
