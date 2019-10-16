@@ -1415,6 +1415,11 @@ Polly
 
 ``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html>`_
 
+Google
+++++++
+
+``textType`` specifies whether the input text is plain **text** or **ssml**. The default value is plain **text**. For more information, see `Using SSML <https://cloud.google.com/text-to-speech/docs/ssml>`_
+
 Microsoft
 +++++++++
 
@@ -1536,6 +1541,19 @@ setArray
   }
 
 Referencing an array element: `${myArray[0]}`, `${myArray[1]}`, `${myArray[2]}`.
+
+setProfileVar
++++++++++++++
+
+.. py:module:: setProfileVar
+
+.. code-block:: json
+
+    {
+        "setProfileVar": [
+            "caller_id_name=Customer"
+        ]
+    }
 
 exportVars
 ++++++++++
