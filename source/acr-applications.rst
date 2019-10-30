@@ -509,9 +509,20 @@ Determines whether the given resource exists or not.
             },
             "setVar": "DoesMemberExist"
         }
-    }]
+    },
+    {
+		"exists": {
+			"resource": "callbackMember",
+			"name": "MyCallbackQueue",
+			"member": {
+				"number": "${caller_id_number}",
+				"done": false
+			},
+			"setVar": "DoesMemberExist"
+		}
+	}]
 
-- **resource**: media, account, queue, callback or dialer.
+- **resource**: media, account, queue, callback, callbackMember or dialer.
 - **name**: the resource name
 - **setVar**: assigns the `true` or `false` into the variable
 - **type**: mp3 or wav, for media resources only
