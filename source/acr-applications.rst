@@ -1408,6 +1408,24 @@ Text-To-Speech.
             },
             "text": "Привет, меня зовут Егор!"
         }
+    },
+    {
+        "tts": {
+          "provider": "google",
+          "accessKey": "",
+          "accessToken": "",
+          "region": "eastasia",
+          "voice": {
+            "language": "ru-RU",
+            "gender": "Male",
+            "audioEncoding": "OGG_OPUS",
+            "sampleRateHertz": 4000,
+            "speakingRate": 1.1,
+            "pitch": 1,
+            "volumeGainDb": 0.2,
+            "effectsProfileId": "wearable-class-device,handset-class-device"
+          },
+          "text": "Привет, меня зовут Егор!"
     }]
 
 Polly
